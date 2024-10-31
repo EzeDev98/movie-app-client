@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search movies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link
+            href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" th:href="@{css/search.css}">
+</head>
+
+<body>
+<header>
+    <nav id="links-nav">
+        <div id="logo">
+            <a th:href="@{/home}"><img th:src="@{/images/bird-2.png}" alt="Logo"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a th:classappend="${page == 'home'} ? 'active'" th:href="@{/home}">Home</a></li>
+            <li><a th:classappend="${page == 'action'} ? 'active'" th:href="@{/action}">Action</a></li>
+            <li><a th:classappend="${page == 'series'} ? 'active'" th:href="@{/series}">Series</a></li>
+            <li><a th:classappend="${page == 'contact'} ? 'active'" th:href="@{/contact}">Contact</a></li>
+        </ul>
+        <div id="search-bar">
+            <form th:action="@{/search}" method="get">
+                <input type="text" name="title" placeholder="Search movies here ...">
+                <button class="btn" type="submit" name=""><i class="fa fa-search thin"></i></button>
+            </form>
+        </div>
+        <div id="burger-menu">
+            <i class="fa fa-bars"></i>
+        </div>
+    </nav>
+    <div id="line"></div>
+    <nav id="address-nav" class="fade">
+        <div id="contact">
+            <h4><i class="fa fa-phone"></i>+2349022931212</h4>
+            <h4><i class="fa fa-envelope"></i>ezemosesjohn21997@gmail.com</h4>
+            <h4><i class="fas fa-map-marker-alt"></i>109 awolowo road ikoyi</h4>
+        </div>
+        <div id="auth">
+            <a th:href="@{/logout}"><i class="fa fa-sign-in"></i>Logout</a>
+            <a th:href="@{/form}"><i class="fa fa-user"></i>Dashboard</a>
+        </div>
+    </nav>
+</header>
+<main>
+    <section id="page1">
+        <div class="animated-bg">
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+        </div>
+        <div class="main-bg">
+            <div class="stars"></div>
+            <div class="twinkl"></div>
+        </div>
+
+        <div id="card-container">
+            <div class="heading-desc">
+                <h1>Search results</h1>
+            </div>
+
+            <div id="card-content">
+
+                <div class="card-body" th:each="movie : ${movies}">
+                    <div class="card">
+                        <a th:href="@{${movie.videoUrl}}">
+                            <div class="card-image">
+                                <img th:src="@{${movie.imageUrl}}" alt="Movie Image">
+                            </div>
+                            <div class="card-details">
+                                <div class="card-details-desc">
+                                    <h3 th:text="${movie.name}"></h3>
+                                    <h4 th:text="'Origin: ' + ${movie.origin}"></h4>
+                                    <h4 th:text="'Genre: ' + ${movie.genre}"></h4>
+                                    <h4 th:text="'Year: ' + ${movie.year}"></h4>
+                                </div>
+                                <div class="card-play">
+                                    <i class="fa fa-play-circle"></i>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <div id="footer-container">
+        <div id="footer-links">
+            <li><a href="" target="_blank"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="" target="_blank"><i class="fab fa-youtube"></i></a></li>
+            <li><a href="" target="_blank"><i class="fab fa-google"></i></a></li>
+        </div>
+
+        <div id="footer-links-1">
+            <li><a href="">Get App</a></li>
+            <li><a href="">Help</a></li>
+            <li><a href="">Site Index</a></li>
+            <li><a href="">MovieQuestPro</a></li>
+            <li><a href="">Box Office EzeDev</a></li>
+            <li><a href="">MovieQuest Developer</a></li>
+        </div>
+
+        <div id="footer-links-1">
+            <li><a href="">Press Room</a></li>
+            <li><a href="">Advertising</a></li>
+            <li><a href="">Jobs</a></li>
+            <li><a href="">Conditions of Use</a></li>
+            <li><a href="">Privacy Policy</a></li>
+            <li><a href="">Your Ads Privacy Choices</a></li>
+        </div>
+
+        <div id="patent">
+            <h4>eze's incorporation</h4>
+        </div>
+
+        <div id="copy-right">
+            <p>&#169;1990-2024 by ezedev.com, Inc.</p>
+        </div>
+    </div>
+</footer>
+<script>
+
+    // Add scroll event listener
+    window.addEventListener('scroll', function () {
+        var addressNav = document.getElementById('address-nav');
+        var linksNav = document.getElementById('links-nav');
+        var scrolled = window.scrollY > 0;
+        addressNav.classList.toggle('scrolled', scrolled);
+        linksNav.classList.toggle('scrolled', scrolled);
+    });
+
+    document.getElementById('burger-menu').addEventListener('click', function () {
+        var navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('active');
+    });
+
+</script>
+</body>
+
+</html>

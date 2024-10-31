@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Series movies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{css/series.css}">
+</head>
+
+<body>
+<header>
+    <nav id="links-nav">
+        <div id="logo">
+            <a th:href="@{/home}"><img th:src="@{/images/bird-2.png}" alt="Logo"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a th:classappend="${page == 'home'} ? 'active'" th:href="@{/home}">Home</a></li>
+            <li><a th:classappend="${page == 'action'} ? 'active'" th:href="@{/action}">Action</a></li>
+            <li><a th:classappend="${page == 'series'} ? 'active'" th:href="@{/series}">Series</a></li>
+            <li><a th:classappend="${page == 'contact'} ? 'active'" th:href="@{/contact}">Contact</a></li>
+        </ul>
+        <div id="search-bar">
+            <form th:action="@{/search}" method="get">
+                <input type="text" name="title" placeholder="Search movies here ...">
+                <button class="btn" type="submit" name=""><i class="fa fa-search thin"></i></button>
+            </form>
+        </div>
+        <div id="burger-menu">
+            <i class="fa fa-bars"></i>
+        </div>
+    </nav>
+    <div id="line"></div>
+    <nav id="address-nav" class="fade">
+        <div id="contact">
+            <h4><i class="fa fa-phone"></i>+2349022931212</h4>
+            <h4><i class="fa fa-envelope"></i>ezemosesjohn21997@gmail.com</h4>
+            <h4><i class="fas fa-map-marker-alt"></i>109 awolowo road ikoyi</h4>
+        </div>
+        <div id="auth">
+            <a th:href="@{/logout}"><i class="fa fa-sign-in"></i>Logout</a>
+            <a th:href="@{/logout}"><i class="fa fa-sign-in"></i>Dashboard</a>
+        </div>
+    </nav>
+</header>
+<main>
+    <section id="page1">
+        <div id="page-1-container-position">
+            <div id="page-1-container">
+                <h1>Mortal Kombat</h1>
+                <div id="movie-desc-head">
+                    <h4>2020<span class="movie-line-sep"></span></h4>
+                    <h4>Series<span class="movie-line-sep"></span></h4>
+                    <h4>Historical<span class="movie-line-sep"></span></h4>
+                    <h4 class="movie-text-color">Korean</h4>
+                </div>
+                <div id="movie-desc">
+                    <p>Following the conquest of Gojoseon by Han China in 108 BCE,
+                        the surviving tribes and city-states of Manchuria and
+                        the northern Korean Peninsula are harshly subjugated as tributaries to the Han,
+                        who are portrayed as ruling with an iron fist from the Four Commanderies.
+                        Haemosu, the leader of the local resistance in the form of the Damul Army,
+                        covertly teams up with Prince Geumwa of Buyeo
+                        to defend and rescue Gojoseon refugees throughout the land...
+                    </p>
+                </div>
+                <div id="movie-btn">
+                    <a class="active-color" href=""><i class="fa fa-play"></i>Play</a>
+                    <a href=""><i class="fa fa-cloud-download"></i>Download</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="animated-bg">
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+        </div>
+    </section>
+    <section id="page2">
+        <div id="page-container">
+            <h1 id="page-header">Now Showing</h1>
+            <div id="page-container-content">
+                <div id="page-2-container-content">
+                    <div id="page-image-desc">
+                        <div id="page-2-image-animate">
+                            <img th:src="@{/images/merlin-rm.jpg}">
+                            <div class="flame-content">
+                                <div class="flame"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="page-text-desc">
+                        <div id="page-2-text-desc-align">
+                            <h1 id="page-header-2">MERLIN</h1>
+                            <div id="page-2-movie-desc-head">
+                                <h4>2020<span class="page-2-movie-line-sep"></span></h4>
+                                <h4>Series<span class="page-2-movie-line-sep"></span></h4>
+                                <h4>Historical<span class="page-2-movie-line-sep"></span></h4>
+                                <h4 class="page-2-movie-text-color">Korean</h4>
+                            </div>
+                        </div>
+                        <h1>Story line:</h1>
+                        <p>This action-packed fantasy-drama revisits the saga of King Arthur and his wizard, Merlin,
+                            by focusing on the two characters when they were ambitious young men struggling to
+                            understand their destinies. In this telling, Prince Arthur is known to be the heir.
+                        </p>
+                        <a href=""><i class="fa fa-play-circle"></i>Watch now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="page3">
+        <div id="page-container-3">
+            <h1 id="page-header-3">Now Showing</h1>
+            <div id="page-container-content-3">
+                <div id="page-3-container-content-3">
+                    <div id="page-image-desc-3">
+                        <div id="page-3-text-desc-align-3">
+                            <h1 id="header-3">MORTAL KOMBAT</h1>
+                            <div id="page-3-movie-desc-head-3">
+                                <h4>2020<span class="page-3-movie-line-sep"></span></h4>
+                                <h4>Series<span class="page-3-movie-line-sep"></span></h4>
+                                <h4>Historical<span class="page-3-movie-line-sep"></span></h4>
+                                <h4 class="page-3-movie-text-color">Korean</h4>
+                            </div>
+                            <div id="page-text-desc-3">
+                                <h1>Story line:</h1>
+                                <p>This action-packed fantasy-drama revisits the saga of King Arthur and his wizard, Merlin,
+                                    by focusing on the two characters when they were ambitious young men struggling to
+                                    understand their destinies. In this telling, Prince Arthur is known to be the heir.
+                                </p>
+                                <a href=""><i class="fa fa-play-circle"></i>Watch now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="page-3-image-animate">
+                        <img th:src="@{/images/SubZero.png}">
+                        <div class="sub-cover">
+                            <div class="circle"></div>
+                            <SVG>
+                                <filter id="wavy">
+                                    <feTurbulence x="0" y="0" baseFrequency="0.009" numOctaves="5" seed="2">
+                                        <animate attributeName="baseFrequency" dur="60s" values="0.02;0.005;0.02"
+                                                 repeatCount="indefinite">
+                                    </feTurbulence>
+                                    <feDisplacementMap in="SourceGraphic" scale="30"></feDisplacementMap>
+                                </filter>
+                            </SVG>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="page4">
+        <div id="faq-page">
+            <h1 id="faq-title">Frequently Asked Questions</h1>
+            <div class="faq-container">
+                <div class="faq-questions">
+                    <h3>How many seasons has Vikings ?</h3>
+
+                    <svg width="15" height="10" viewBox="0 0 42 25">
+                        <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round" />
+                    </svg>
+                </div>
+                <div class="faq-answers">
+                    <p>
+                        The TV series Vikings has a total of 6 seasons. The show originally aired from 2013 to 2020.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-container">
+                <div class="faq-questions">
+                    <h3>How did Ragnar Lothbrok died ?</h3>
+
+                    <svg width="15" height="10" viewBox="0 0 42 25">
+                        <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round" />
+                    </svg>
+                </div>
+                <div class="faq-answers">
+                    <p>
+                        After returning to England to seek revenge on King Ecbert, Ragnar surrenders to King Ecbert and is handed over to King Aelle, who has a deep grudge against Ragnar for his earlier raids. King Aelle tortures Ragnar by cutting a cross into his head and then throws him into a pit of venomous snakes. The snakes bite and poison Ragnar, ultimately leading to his death.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <div id="footer-container">
+        <div id="footer-links">
+            <li><a href="" target="_blank"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="" target="_blank"><i class="fab fa-youtube"></i></a></li>
+            <li><a href="" target="_blank"><i class="fab fa-google"></i></a></li>
+        </div>
+
+        <div id="footer-links-1">
+            <li><a href="">Get App</a></li>
+            <li><a href="">Help</a></li>
+            <li><a href="">Site Index</a></li>
+            <li><a href="">MovieQuestPro</a></li>
+            <li><a href="">Box Office EzeDev</a></li>
+            <li><a href="">MovieQuest Developer</a></li>
+        </div>
+
+        <div id="footer-links-1">
+            <li><a href="">Press Room</a></li>
+            <li><a href="">Advertising</a></li>
+            <li><a href="">Jobs</a></li>
+            <li><a href="">Conditions of Use</a></li>
+            <li><a href="">Privacy Policy</a></li>
+            <li><a href="">Your Ads Privacy Choices</a></li>
+        </div>
+
+        <div id="patent">
+            <h4>eze's incorporation</h4>
+        </div>
+
+        <div id="copy-right">
+            <p>&#169;1990-2024 by ezedev.com, Inc.</p>
+        </div>
+    </div>
+</footer>
+<script>
+    window.addEventListener('scroll', function () {
+        var addressNav = document.getElementById('address-nav');
+        var linksNav = document.getElementById('links-nav');
+        var scrolled = window.scrollY > 0;
+        addressNav.classList.toggle('scrolled', scrolled);
+        linksNav.classList.toggle('scrolled', scrolled);
+    });
+
+    document.getElementById('burger-menu').addEventListener('click', function () {
+        var navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('active');
+    });
+
+    const COUNT_OF_PARTICLES = 150
+    const container = document.querySelector('.flame')
+    container.style.setProperty('--particles', COUNT_OF_PARTICLES)
+    Array(COUNT_OF_PARTICLES).fill('').forEach((particle, i) => {
+        let span = document.createElement('span')
+        span.style.setProperty('--n', i + 1)
+        span.style.setProperty('--rnd', Math.random())
+        container.appendChild(span)
+    });
+
+    document.querySelectorAll('.faq-questions').forEach((faq) => {
+        faq.addEventListener('click', () => {
+            const parent = faq.parentElement;
+            const answer = faq.nextElementSibling;
+
+            if (parent.classList.contains('active')) {
+                answer.style.maxHeight = '0';
+            } else {
+                document.querySelectorAll('.faq-container').forEach((item) => {
+                    item.classList.remove('active');
+                    item.querySelector('.faq-answers').style.maxHeight = '0';
+                });
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+            }
+
+            parent.classList.toggle('active');
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const currentPath = window.location.pathname;
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPath) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    });
+</script>
+</body>
+
+</html>

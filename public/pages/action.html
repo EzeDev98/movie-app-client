@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Action movies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link
+            href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{css/action.css}">
+</head>
+
+<body>
+<header>
+    <nav id="links-nav">
+        <div id="logo">
+            <a th:href="@{/home}"><img th:src="@{/images/bird-2.png}" alt="Logo"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a th:classappend="${page == 'home'} ? 'active'" th:href="@{/home}">Home</a></li>
+            <li><a th:classappend="${page == 'action'} ? 'active'" th:href="@{/action}">Action</a></li>
+            <li><a th:classappend="${page == 'series'} ? 'active'" th:href="@{/series}">Series</a></li>
+            <li><a th:classappend="${page == 'contact'} ? 'active'" th:href="@{/contact}">Contact</a></li>
+        </ul>
+        <div id="search-bar">
+            <form th:action="@{/search}" method="get">
+                <input type="text" name="title" placeholder="Search movies here ...">
+                <button class="btn" type="submit" name=""><i class="fa fa-search thin"></i></button>
+            </form>
+        </div>
+        <div id="burger-menu">
+            <i class="fa fa-bars"></i>
+        </div>
+    </nav>
+    <div id="line"></div>
+    <nav id="address-nav" class="fade">
+        <div id="contact">
+            <h4><i class="fa fa-phone"></i>+2349022931212</h4>
+            <h4><i class="fa fa-envelope"></i>ezemosesjohn21997@gmail.com</h4>
+            <h4><i class="fas fa-map-marker-alt"></i>109 awolowo road ikoyi</h4>
+        </div>
+        <div id="auth">
+            <a th:href="@{/logout}"><i class="fa fa-sign-in"></i>Logout</a>
+            <a th:href="@{/form}"><i class="fa fa-sign-in"></i>Dashboard</a>
+        </div>
+    </nav>
+</header>
+<main>
+    <section id="page1">
+        <div id="page-1-container-position">
+            <div id="page-1-container">
+                <h1>Mortal Kombat</h1>
+                <div id="movie-desc-head">
+                    <h4>2020<span class="movie-line-sep"></span></h4>
+                    <h4>Series<span class="movie-line-sep"></span></h4>
+                    <h4>Historical<span class="movie-line-sep"></span></h4>
+                    <h4 class="movie-text-color">Korean</h4>
+                </div>
+                <div id="movie-desc">
+                    <p>Following the conquest of Gojoseon by Han China in 108 BCE,
+                        the surviving tribes and city-states of Manchuria and
+                        the northern Korean Peninsula are harshly subjugated as tributaries to the Han,
+                        who are portrayed as ruling with an iron fist from the Four Commanderies.
+                        Haemosu, the leader of the local resistance in the form of the Damul Army,
+                        covertly teams up with Prince Geumwa of Buyeo
+                        to defend and rescue Gojoseon refugees throughout the land...
+                    </p>
+                </div>
+                <div id="movie-btn">
+                    <a class="active-color" href=""><i class="fa fa-play"></i>Play</a>
+                    <a href=""><i class="fa fa-cloud-download"></i>Download</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="animated-bg">
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+        </div>
+    </section>
+    <section id="page2">
+        <div id="page-sections">
+            <div id="page-section" th:each="video : ${videos}">
+                <div class="page-2-section-image">
+                    <img th:src="@{${video.imageUrls}}">
+                </div>
+                <div id="page-section-2-overlay">
+                    <div id="page-section-2-desc">
+                        <h1 th:text="${video.titles}"></h1>
+                        <p th:text="${video.descriptions}"></p>
+                        <div id="page-rating-icons">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div id="page-play-icon">
+                            <a th:href="@{${video.videoUrls}}"><i class="fa fa-play"></i>Play now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="page3">
+        <div id="page-3-container">
+            <div id="page-3-desc">
+                <h1>Subscribe for more fun</h1>
+                <h4>watch any action movie of your choice at anytime for free</h4>
+                <button id="openModal">
+                    <h6>Subscribe</h6>
+                </button>
+            </div>
+        </div>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <div class="send-email-message">
+                    <h1>We have the best movies</h1>
+                    <p>
+                        Enter the title or the category or genre of the movie you are interested in.
+                        Make sure to provide the proper details of the movie to enhance easy search.
+                        Year of production and producer of the movie,
+                        can also be used to search for your choiced movie.
+                    </p>
+                    <input type="text" name="email" placeholder="Enter your email here ...">
+                    <button class="btn" type="submit" name="">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+<footer>
+    <div id="footer-container">
+        <div id="footer-links">
+            <li><a href="" target="_blank"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="" target="_blank"><i class="fab fa-youtube"></i></a></li>
+            <li><a href="" target="_blank"><i class="fab fa-google"></i></a></li>
+        </div>
+
+        <div id="footer-links-1">
+            <li><a href="">Get App</a></li>
+            <li><a href="">Help</a></li>
+            <li><a href="">Site Index</a></li>
+            <li><a href="">MovieQuestPro</a></li>
+            <li><a href="">Box Office EzeDev</a></li>
+            <li><a href="">MovieQuest Developer</a></li>
+        </div>
+
+        <div id="footer-links-1">
+            <li><a href="">Press Room</a></li>
+            <li><a href="">Advertising</a></li>
+            <li><a href="">Jobs</a></li>
+            <li><a href="">Conditions of Use</a></li>
+            <li><a href="">Privacy Policy</a></li>
+            <li><a href="">Your Ads Privacy Choices</a></li>
+        </div>
+
+        <div id="patent">
+            <h4>eze's incorporation</h4>
+        </div>
+
+        <div id="copy-right">
+            <p>&#169;1990-2024 by ezedev.com, Inc.</p>
+        </div>
+    </div>
+</footer>
+<script>
+
+    // Add scroll event listener
+    window.addEventListener('scroll', function () {
+        var addressNav = document.getElementById('address-nav');
+        var linksNav = document.getElementById('links-nav');
+        var scrolled = window.scrollY > 0;
+        addressNav.classList.toggle('scrolled', scrolled);
+        linksNav.classList.toggle('scrolled', scrolled);
+    });
+
+    document.getElementById('burger-menu').addEventListener('click', function () {
+        var navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('active');
+    });
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("openModal");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close-button")[0];
+
+    // Function to open the modal
+    function openModal() {
+        modal.style.display = "block";
+    }
+
+    // Function to close the modal
+    function closeModal() {
+        modal.style.display = "none";
+    }
+
+    // Function to handle window click for closing the modal
+    function outsideClick(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    // Function to add event listeners
+    function addEventListeners() {
+        btn.addEventListener("click", openModal);
+        span.addEventListener("click", closeModal);
+        window.addEventListener("click", outsideClick);
+    }
+
+    // Function to remove event listeners
+    function removeEventListeners() {
+        btn.removeEventListener("click", openModal);
+        span.removeEventListener("click", closeModal);
+        window.removeEventListener("click", outsideClick);
+    }
+
+    // Initial check and add event listeners if screen width is greater than 500px
+    if (window.innerWidth > 500) {
+        addEventListeners();
+    }
+
+    // Update event listeners on window resize
+    window.onresize = function () {
+        if (window.innerWidth > 500) {
+            addEventListeners();
+        } else {
+            removeEventListeners();
+            closeModal(); // Ensure modal is closed when resizing to a smaller screen
+        }
+    };
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const currentPath = window.location.pathname;
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPath) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    });
+
+</script>
+</body>
+
+</html>
