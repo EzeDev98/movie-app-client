@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form for posting movies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link
+            href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" th:href="@{css/form.css}">
+</head>
+
+<body>
+<main>
+    <section id="page1">
+        <div class="animated-bg">
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+        </div>
+        <div class="main-bg">
+            <div class="stars"></div>
+            <div class="twinkl"></div>
+        </div>
+        <a id="back-home" th:href="@{/home}">home</a>
+        <div id="page">
+            <form id="page-form" th:action="@{/form}" method="POST" enctype="multipart/form-data">
+                <div id="error-message" th:if="${errorMessage}">
+                    <h3 th:text="${errorMessage}"></h3>
+                </div>
+                <div id="success-message" th:if="${successMessage}">
+                    <h3 th:text="${successMessage}"></h3>
+                </div>
+                <div id="input-fields">
+                    <div class="input-box-container">
+                        <div class="input-box-content">
+                            <div class="input-box">
+                                <input type="text" name="title" required="required" th:value="${movies.title}">
+                                <span class="input-box-text">Title</span>
+                                <span class="input-box-lines"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-box-container">
+                        <div class="input-box-content">
+                            <div class="input-box">
+                                <input type="text" name="origin" required="required" th:value="${movies.origin}">
+                                <span class="input-box-text">Origin</span>
+                                <span class="input-box-lines"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-box-container">
+                        <div class="input-box-content">
+                            <div class="input-box">
+                                <input type="text" name="genre" required="required" th:value="${movies.genre}">
+                                <span class="input-box-text">Genre</span>
+                                <span class="input-box-lines"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-box-container">
+                        <div class="input-box-content">
+                            <div class="input-box">
+                                <input type="text" name="year" required="required" th:value="${movies.year}">
+                                <span class="input-box-text">Year</span>
+                                <span class="input-box-lines"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-box-container">
+                        <div class="input-box-content">
+                            <div class="input-box">
+                                <input type="text" name="category" required="required" th:value="${movies.category}">
+                                <span class="input-box-text">Category</span>
+                                <span class="input-box-lines"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-box-container">
+                        <div class="input-box-content">
+                            <div class="input-box">
+                                <input type="text" name="videoUrl" required="required" th:value="${movies.videoUrl}">
+                                <span class="input-box-text">Video Url</span>
+                                <span class="input-box-lines"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-box-container">
+                        <div class="input-box-content">
+                            <div class="file-box">
+                                <input type="file" name="imageUrl" accept="image/*" required="required">
+                                <span class="input-box-lines"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-box-container">
+                        <div class="input-box-content">
+                            <div class="input-box textarea">
+                                <textarea name="description" required="required" th:text="${movies.description}"></textarea>
+                                <span class="input-box-text">Description</span>
+                                <span class="input-box-lines"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-box-container">
+                        <div class="input-box-content">
+                            <input type="submit" value="send">
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+
+    </section>
+
+</main>
+
+</body>
+
+</html>
