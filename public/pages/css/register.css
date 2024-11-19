@@ -366,6 +366,7 @@ section {
     font-weight: lighter;
     font-size: clamp(.1rem, 2vw + .1rem, 1rem);
     text-align: center;
+    color: white;
 }
 
 #page2 #page-2-container #page-form  #input-fields {

@@ -1,4 +1,3 @@
-
 const form = document.getElementById("page-form");
 const errorMessage = document.getElementById("error-message");
 const errorText = document.getElementById("error-text");
@@ -9,7 +8,8 @@ form.addEventListener('submit', function(event) {
     errorMessage.style.display = 'none';
     errorText.innerHTML = '';
 
-    const fullName = document.getElementById("fullName").value.trim();
+    const firstName = document.getElementById("firstname").value.trim();
+    const lastName = document.getElementById("lastname").value.trim();
     const username = document.getElementById("username").value.trim();
     const email = document.getElementById("email").value.trim();
     const phoneNumber = document.getElementById("phoneNumber").value.trim();
@@ -35,7 +35,8 @@ form.addEventListener('submit', function(event) {
     }
 
     const formData = {
-        full_name: fullName,
+        first_name: firstName,
+        last_name: lastName,
         username: username,
         email: email,
         phone_number: phoneNumber,
@@ -51,9 +52,9 @@ form.addEventListener('submit', function(event) {
         body: JSON.stringify(formData)
     })
     .then(async response => {
-        if (response.ok || response === 200 || response === 201) {
+        if (response.ok) {
             await response.json();
-            window.location.href = '/pages/login.html';
+            window.location.href = '/pages/activate.html';
         } else {
             const data = await response.json();
             displayErrorMessages(data.message || 'An error occurred. User not registered');

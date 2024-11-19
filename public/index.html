@@ -4,24 +4,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="pages/css/index.css">
-    <title>Chat landing page</title>
 </head>
 
 <body>
-    <div class="chat-container">
-        <div class="chat-text">
-            <h1>Lack of effective communication is the bane of every failed relationship,</h1>
-            <h2> Out of sight doesn't mean out of mind</h2>
-            <h3>Communication is pertinent!...</h3>
-            <a class="subtitle" href="./pages/login.html">Chat now<i class="fa fa-long-arrow-right"></i></a>
+<header>
+    <nav id="links-nav">
+        <div id="logo">
+            <a href="index.html"><img src="./images/bird-2.png" alt="Logo"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="./pages/action.html">Action</a></li>
+            <li><a href="./pages/series.html">Series</a></li>
+            <li><a href="./pages/contact.html">Contact</a></li>
+        </ul>
+        <div id="search-bar">
+            <form action="/search" method="get">
+                <input type="text" name="title" placeholder="Search movies here ...">
+                <button class="btn" type="submit"><i class="fa fa-search thin"></i></button>
+            </form>
+        </div>
+        <div id="burger-menu">
+            <i class="fa fa-bars"></i>
+        </div>
+    </nav>
+    <div id="line"></div>
+    <nav id="address-nav" class="fade">
+        <div id="contact">
+            <h4><i class="fa fa-phone"></i>+2349022931212</h4>
+            <h4><i class="fa fa-envelope"></i>ezemosesjohn21997@gmail.com</h4>
+            <h4><i class="fas fa-map-marker-alt"></i>109 awolowo road ikoyi</h4>
+        </div>
+        <div id="auth">
+            <a href="./pages/login.html"><i class="fa fa-sign-in"></i>Login</a>
+            <a href="./pages/register.html"><i class="fa fa-user"></i>Register</a>
+            <!-- <a href="/logout"><i class="fa fa-sign-in"></i>Logout</a>
+            <a href="/form"><i class="fa fa-sign-in"></i>Dashboard</a> -->
+        </div>
+    </nav>
+</header>
+<main>
+    <section id="page1">
+        <div class="page1">
+            <h1>Unleashing a thrilling quest for continuous entertainment</h1>
+            <h4>Enter your movie preferences here either by title or keyword</h4>
+            <form action="/search" method="get">
+                <input type="text" name="text" placeholder="Search movies here ...">
+                <button class="btn" type="submit"><i class="fa fa-paper-plane"></i></button>
+            </form>
+        </div>
+        <div class="animated-bg">
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+            <div id="dot"></div>
+        </div>
+    </section>
+    <section id="page2">
+        <div id="page-2-container">
+            <div id="page-2-description">
+                <h3>Subscribing to our platform gives you access to watch any movie on your smart TV for free</h3>
+                <a class="sub-btn" href="">Subscribe now</a>
+            </div>
+            <div id="page-2-image">
+                <img src="./images/stv.jpeg">
+            </div>
+        </div>
+    </section>
+    <section id="page2" class="page-bg-color">
+        <div id="page-2-container">
+            <div id="page-2-image">
+                <img src="./images/phone.jpg">
+            </div>
+            <div id="page-2-description">
+                <h3>You can also access our TV shows, action movies, and series on your smartphones</h3>
+                <a class="sub-btn" href="">Watch now</a>
+            </div>
+        </div>
+    </section>
+    <section id="page4">
+        <div id="page-4-container">
+            <div id="page-4-desc-texts">
+                <h2>We have very interesting and educational videos for kids</h2>
+                <h3>You can set parental controls to censor your children's activities on the platform</h3>
+                <h3>Children are thereby protected from viewing adult content</h3>
+                <a href="">Try it now</a>
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <div id="footer-container">
+        <div id="footer-links">
+            <li><a href="" target="_blank"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="" target="_blank"><i class="fab fa-youtube"></i></a></li>
+            <li><a href="" target="_blank"><i class="fab fa-google"></i></a></li>
+        </div>
+
+        <div id="footer-links-1">
+            <li><a href="">Get App</a></li>
+            <li><a href="">Help</a></li>
+            <li><a href="">Site Index</a></li>
+            <li><a href="">MovieQuestPro</a></li>
+            <li><a href="">Box Office EzeDev</a></li>
+            <li><a href="">MovieQuest Developer</a></li>
+        </div>
+
+        <div id="footer-links-1">
+            <li><a href="">Press Room</a></li>
+            <li><a href="">Advertising</a></li>
+            <li><a href="">Jobs</a></li>
+            <li><a href="">Conditions of Use</a></li>
+            <li><a href="">Privacy Policy</a></li>
+            <li><a href="">Your Ads Privacy Choices</a></li>
+        </div>
+
+        <div id="patent">
+            <h4>Eze's incorporation</h4>
+        </div>
+
+        <div id="copy-right">
+            <p>&#169;1990-2024 by ezedev.com, Inc.</p>
         </div>
     </div>
+</footer>
+<script>
+    // Add scroll event listener
+    window.addEventListener('scroll', function () {
+        var addressNav = document.getElementById('address-nav');
+        var linksNav = document.getElementById('links-nav');
+        var scrolled = window.scrollY > 0;
+        addressNav.classList.toggle('scrolled', scrolled);
+        linksNav.classList.toggle('scrolled', scrolled);
+    });
 
+    document.getElementById('burger-menu').addEventListener('click', function () {
+        var navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('active');
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const currentPath = window.location.pathname;
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPath) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    });
+</script>
 </body>
 
 </html>

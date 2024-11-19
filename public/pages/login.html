@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -6,8 +7,7 @@
   <title>Login</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Rajdhani:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/login.css">
 </head>
@@ -16,16 +16,16 @@
 <header>
   <nav id="links-nav">
     <div id="logo">
-      <a th:href="@{/home}"><img th:src="@{/images/bird-2.png}" alt="Logo"></a>
+      <a href="../index.html"><img src="../images/bird-2.png" alt="Logo"></a>
     </div>
     <ul class="nav-links">
-      <li><a th:classappend="${page == 'home'} ? 'active'" th:href="@{/home}">Home</a></li>
-      <li><a th:classappend="${page == 'action'} ? 'active'" th:href="@{/action}">Action</a></li>
-      <li><a th:classappend="${page == 'series'} ? 'active'" th:href="@{/series}">Series</a></li>
-      <li><a th:classappend="${page == 'contact'} ? 'active'" th:href="@{/contact}">Contact</a></li>
+      <li><a href="../index.html" class="">Home</a></li>
+      <li><a href="./action.html" class="">Action</a></li>
+      <li><a href="./series.html" class="">Series</a></li>
+      <li><a href="./contact.html" class="">Contact</a></li>
     </ul>
     <div id="search-bar">
-      <form th:action="@{/search}" method="get">
+      <form action="./search.html" method="get">
         <input type="text" name="title" placeholder="Search movies here ...">
         <button class="btn" type="submit" name=""><i class="fa fa-search thin"></i></button>
       </form>
@@ -42,8 +42,8 @@
       <h4><i class="fas fa-map-marker-alt"></i>109 awolowo road ikoyi</h4>
     </div>
     <div id="auth">
-      <a th:href="@{/login}"><i class="fa fa-sign-in"></i>Login</a>
-      <a th:href="@{/registration}"><i class="fa fa-user"></i>Register</a>
+      <a href="./login.html"><i class="fa fa-sign-in"></i>Login</a>
+      <a href="./register.html"><i class="fa fa-user"></i>Register</a>
     </div>
   </nav>
 </header>
@@ -63,16 +63,16 @@
   </section>
   <section id="page2">
     <div id="page-2-container">
-      <form id="page-form" th:action="@{/login}" method="post">
-        <div id="error-message" th:if="${errorMessage}">
-          <h3 th:text="${errorMessage}"></h3>
+      <form id="page-form" onsubmit="return false;">
+        <div id="error-message">
+          <h4 id="error-text"></h4>
         </div>
         <div id="input-fields">
           <h1>Login to your account</h1>
           <div class="input-col">
             <div class="input-box">
-              <input id="email" type="email" name="username" required="required">
-              <span class="input-box-text">Email</span>
+              <input id="username" type="text" name="username" required="required">
+              <span class="input-box-text">Username</span>
               <span class="input-box-lines"></span>
             </div>
           </div>
@@ -93,18 +93,18 @@
           </div>
           <div id="input-box-auth-type">
             <div id="facebook-auth" class="auth-button">
-              <a href="" target="_blank"><i class="fab fa-facebook"></i>
+              <a href="#" target="_blank"><i class="fab fa-facebook"></i>
                 <h6>Facebook</h6>
               </a>
             </div>
             <div id="google-auth" class="auth-button">
-              <a href="" target="_blank"><i class="fab fa-google"></i>
+              <a href="#" target="_blank"><i class="fab fa-google"></i>
                 <h6>Google</h6>
               </a>
             </div>
           </div>
           <div id="input-box-auth-question">
-            <h3>Don't have an account? <a href="/registration">Signup here</a></h3>
+            <h3>Don't have an account? <a href="./register.html">Signup here</a></h3>
           </div>
         </div>
       </form>
@@ -114,29 +114,29 @@
 <footer>
   <div id="footer-container">
     <div id="footer-links">
-      <li><a href="" target="_blank"><i class="fab fa-facebook"></i></a></li>
-      <li><a href="" target="_blank"><i class="fab fa-twitter"></i></a></li>
-      <li><a href="" target="_blank"><i class="fab fa-instagram"></i></a></li>
-      <li><a href="" target="_blank"><i class="fab fa-youtube"></i></a></li>
-      <li><a href="" target="_blank"><i class="fab fa-google"></i></a></li>
+      <li><a href="#" target="_blank"><i class="fab fa-facebook"></i></a></li>
+      <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+      <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+      <li><a href="#" target="_blank"><i class="fab fa-youtube"></i></a></li>
+      <li><a href="#" target="_blank"><i class="fab fa-google"></i></a></li>
     </div>
 
     <div id="footer-links-1">
-      <li><a href="">Get App</a></li>
-      <li><a href="">Help</a></li>
-      <li><a href="">Site Index</a></li>
-      <li><a href="">MovieQuestPro</a></li>
-      <li><a href="">Box Office EzeDev</a></li>
-      <li><a href="">MovieQuest Developer</a></li>
+      <li><a href="#">Get App</a></li>
+      <li><a href="#">Help</a></li>
+      <li><a href="#">Site Index</a></li>
+      <li><a href="#">MovieQuestPro</a></li>
+      <li><a href="#">Box Office EzeDev</a></li>
+      <li><a href="#">MovieQuest Developer</a></li>
     </div>
 
     <div id="footer-links-1">
-      <li><a href="">Press Room</a></li>
-      <li><a href="">Advertising</a></li>
-      <li><a href="">Jobs</a></li>
-      <li><a href="">Conditions of Use</a></li>
-      <li><a href="">Privacy Policy</a></li>
-      <li><a href="">Your Ads Privacy Choices</a></li>
+      <li><a href="#">Press Room</a></li>
+      <li><a href="#">Advertising</a></li>
+      <li><a href="#">Jobs</a></li>
+      <li><a href="#">Conditions of Use</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Your Ads Privacy Choices</a></li>
     </div>
 
     <div id="patent">
@@ -176,6 +176,8 @@
         });
     });
 </script>
+<script src="../dist/loginPage.bundle.js"></script>
 </body>
 
 </html>
+
