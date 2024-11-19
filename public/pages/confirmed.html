@@ -1,18 +1,77 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Activation page</title>
-  <link rel="stylesheet" th:href="@{css/confirmed.css}">
+  <title>Confirmation Page</title>
+  <link rel="stylesheet" href="css/confirmed.css">
 </head>
 <body>
-<section id="container">
-  <div id="contents">
-    <h1>Account already activated</h1>
-    <h3>Click on the link below to sign in to your account</h3>
-    <a href="/login">Login</a>
-  </div>
-</section>
+  <section id="container">
+    <div id="contents">
+      <h1 id="headerMessage">Checking your account status...</h1>
+      <h3 id="statusMessage">Please wait while we confirm your account.</h3>
+      <a href="login.html" id="loginLink" style="display: none;">Login</a>
+    </div>
+  </section>
+
+  <script>
+
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    const token = getQueryParam('token');  
+
+    async function confirmToken() {
+      if (!token) {
+        updateMessages("Something went wrong", "Token not found in the URL.");
+        return;
+      }
+
+      try {
+        const response = await fetch(`http://localhost:2000/api/v1/confirm?token=${token}`);
+
+        if (response.ok) {
+          const data = await response.json();
+          updateMessages("Account activated successfully!", data.message);
+          document.getElementById("loginLink").style.display = "block"; 
+        } else {
+          let headerMessage;
+          let errorMessage;
+          switch (response.status) {
+            case 400:
+              headerMessage = "Oops! This link isn’t valid.";
+              errorMessage = "The activation link is invalid. Try requesting a new one.";
+              break;
+            case 404:
+              headerMessage = "Link not found.";
+              errorMessage = "We couldn’t find the activation link.";
+              break;
+            case 410:
+              headerMessage = "Looks like you’ve already activated your account!";
+              errorMessage = "Activation link has expired.";
+              break;
+            default:
+              headerMessage = "Unexpected error.";
+              errorMessage = "Something went wrong. Please try again.";
+          }
+          updateMessages(headerMessage, errorMessage);
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        updateMessages("Unexpected error", "Please try again later.");
+      }
+    }
+
+    function updateMessages(headerText, message) {
+      document.getElementById("headerMessage").textContent = headerText;
+      document.getElementById("statusMessage").textContent = message;
+      document.getElementById("loginLink").style.display = headerText === "Account activated successfully!" ? "block" : "none"; 
+    }
+
+    window.addEventListener("load", confirmToken);
+  </script>
 </body>
 </html>

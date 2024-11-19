@@ -17,16 +17,16 @@
 <header>
   <nav id="links-nav">
     <div id="logo">
-      <a href="/home"><img src="../images/bird-2.png" alt="Logo"></a>
+      <a href="../index.html"><img src="../images/bird-2.png" alt="Logo"></a>
     </div>
     <ul class="nav-links">
-      <li><a class="active" href="/home">Home</a></li>
-      <li><a href="/action">Action</a></li>
-      <li><a href="/series">Series</a></li>
-      <li><a href="/contact">Contact</a></li>
+      <li><a class="active" href="../index.html">Home</a></li>
+      <li><a href="./action.html">Action</a></li>
+      <li><a href="./series.html">Series</a></li>
+      <li><a href="./contact.html">Contact</a></li>
     </ul>
     <div id="search-bar">
-      <form action="/search" method="get">
+      <form action="./search.html" method="get">
         <input type="text" name="title" placeholder="Search movies here ...">
         <button class="btn" type="submit"><i class="fa fa-search thin"></i></button>
       </form>
@@ -43,8 +43,8 @@
       <h4><i class="fas fa-map-marker-alt"></i>109 awolowo road ikoyi</h4>
     </div>
     <div id="auth">
-      <a href="/login"><i class="fa fa-sign-in"></i>Login</a>
-      <a href="/registration"><i class="fa fa-user"></i>Register</a>
+      <a href="./login.html"><i class="fa fa-sign-in"></i>Login</a>
+      <a href="./register.html"><i class="fa fa-user"></i>Register</a>
     </div>
   </nav>
 </header>
@@ -66,7 +66,7 @@
 
   <section id="page2">
     <div id="page-2-container">
-      <form id="page-form" action="/registration" method="post">
+      <form id="page-form" onsubmit="return false;">
         <div id="error-message">
           <h4 id="error-text"></h4>
         </div>
@@ -74,8 +74,15 @@
           <h1>Create an account</h1>
           <div class="input-col">
             <div class="input-box">
-              <input type="text" name="fullName" id="fullName" required>
-              <span class="input-box-text">Full name</span>
+              <input type="text" name="firstname" id="firstname" required>
+              <span class="input-box-text">First name</span>
+              <span class="input-box-lines"></span>
+            </div>
+          </div>
+          <div class="input-col">
+            <div class="input-box">
+              <input type="text" name="lastname" id="lastname" required>
+              <span class="input-box-text">Last name</span>
               <span class="input-box-lines"></span>
             </div>
           </div>
@@ -135,7 +142,7 @@
             </div>
           </div>
           <div id="input-box-auth-question">
-            <h3>Already have an account? <a href="/login">Login here</a></h3>
+            <h3>Already have an account? <a href="./login.html">Login here</a></h3>
           </div>
         </div>
       </form>

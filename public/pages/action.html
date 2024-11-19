@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -11,23 +11,23 @@
             href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Rajdhani:wght@300;400;500;600;700&display=swap"
             rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" th:href="@{css/action.css}">
+    <link rel="stylesheet" href="css/action.css">
 </head>
 
 <body>
 <header>
     <nav id="links-nav">
         <div id="logo">
-            <a th:href="@{/home}"><img th:src="@{/images/bird-2.png}" alt="Logo"></a>
+            <a href="../index.html"><img src="../images/bird-2.png" alt="Logo"></a>
         </div>
         <ul class="nav-links">
-            <li><a th:classappend="${page == 'home'} ? 'active'" th:href="@{/home}">Home</a></li>
-            <li><a th:classappend="${page == 'action'} ? 'active'" th:href="@{/action}">Action</a></li>
-            <li><a th:classappend="${page == 'series'} ? 'active'" th:href="@{/series}">Series</a></li>
-            <li><a th:classappend="${page == 'contact'} ? 'active'" th:href="@{/contact}">Contact</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./action.html">Action</a></li>
+            <li><a href="./series.html">Series</a></li>
+            <li><a href="./contact.html">Contact</a></li>
         </ul>
         <div id="search-bar">
-            <form th:action="@{/search}" method="get">
+            <form action="./search.html" method="get">
                 <input type="text" name="title" placeholder="Search movies here ...">
                 <button class="btn" type="submit" name=""><i class="fa fa-search thin"></i></button>
             </form>
@@ -44,8 +44,8 @@
             <h4><i class="fas fa-map-marker-alt"></i>109 awolowo road ikoyi</h4>
         </div>
         <div id="auth">
-            <a th:href="@{/logout}"><i class="fa fa-sign-in"></i>Logout</a>
-            <a th:href="@{/form}"><i class="fa fa-sign-in"></i>Dashboard</a>
+            <a href="/logout"><i class="fa fa-sign-in"></i>Logout</a>
+            <a href="/form"><i class="fa fa-sign-in"></i>Dashboard</a>
         </div>
     </nav>
 </header>
@@ -118,14 +118,14 @@
     </section>
     <section id="page2">
         <div id="page-sections">
-            <div id="page-section" th:each="video : ${videos}">
+            <div id="page-section">
                 <div class="page-2-section-image">
-                    <img th:src="@{${video.imageUrls}}">
+                    <img src="../images/captain-america.webp">
                 </div>
                 <div id="page-section-2-overlay">
                     <div id="page-section-2-desc">
-                        <h1 th:text="${video.titles}"></h1>
-                        <p th:text="${video.descriptions}"></p>
+                        <h1>Captain America</h1>
+                        <p>After being injected with a special serum, Steve undergoes a transformation, gaining superhuman strength, agility, and endurance, becoming Captain America. He initially serves as a symbol of hope and morale, performing in shows to rally the troops. However, when his best friend, Bucky Barnes, is captured by HYDRA, the Nazi-affiliated organization, Steve dons his shield and suit to rescue him, along with other soldiers. Captain America and his team, known as the Howling Commandos, fight against HYDRA and its ruthless leader, the Red Skull, who is using a mysterious artifact called the Tesseract to develop advanced weaponry.</p>
                         <div id="page-rating-icons">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -134,7 +134,7 @@
                             <i class="fa fa-star"></i>
                         </div>
                         <div id="page-play-icon">
-                            <a th:href="@{${video.videoUrls}}"><i class="fa fa-play"></i>Play now</a>
+                            <a href=""><i class="fa fa-play"></i>Play now</a>
                         </div>
                     </div>
                 </div>
@@ -224,58 +224,48 @@
         navLinks.classList.toggle('active');
     });
 
-    // Get the modal
     var modal = document.getElementById("myModal");
 
-    // Get the button that opens the modal
     var btn = document.getElementById("openModal");
 
-    // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close-button")[0];
 
-    // Function to open the modal
     function openModal() {
         modal.style.display = "block";
     }
 
-    // Function to close the modal
     function closeModal() {
         modal.style.display = "none";
     }
 
-    // Function to handle window click for closing the modal
     function outsideClick(event) {
         if (event.target == modal) {
             modal.style.display = "none";
         }
     }
 
-    // Function to add event listeners
     function addEventListeners() {
         btn.addEventListener("click", openModal);
         span.addEventListener("click", closeModal);
         window.addEventListener("click", outsideClick);
     }
 
-    // Function to remove event listeners
     function removeEventListeners() {
         btn.removeEventListener("click", openModal);
         span.removeEventListener("click", closeModal);
         window.removeEventListener("click", outsideClick);
     }
 
-    // Initial check and add event listeners if screen width is greater than 500px
     if (window.innerWidth > 500) {
         addEventListeners();
     }
 
-    // Update event listeners on window resize
     window.onresize = function () {
         if (window.innerWidth > 500) {
             addEventListeners();
         } else {
             removeEventListeners();
-            closeModal(); // Ensure modal is closed when resizing to a smaller screen
+            closeModal(); 
         }
     };
 

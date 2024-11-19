@@ -300,7 +300,7 @@ section {
 }
 
 #page1 .animated-bg {
-    background-image: url(/images/jumong-2.webp);
+    background-image: url(../../images/jumong-2.webp);
     background-color: rgba(0, 0, 0, 0.7);
     position: absolute;
     top: 0;

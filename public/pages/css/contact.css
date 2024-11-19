@@ -296,7 +296,7 @@ section {
 }
 
 #page1 .animated-bg {
-    background-image: url(/images/mortal-kombat.jpeg);
+    background-image: url(../../images/mortal-kombat.jpeg);
     background-color: rgba(0, 0, 0, 0.8);
     position: absolute;
     top: 0;

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -12,23 +12,23 @@
             rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" th:href="@{css/search.css}">
+    <link rel="stylesheet" href="css/search.css">
 </head>
 
 <body>
 <header>
     <nav id="links-nav">
         <div id="logo">
-            <a th:href="@{/home}"><img th:src="@{/images/bird-2.png}" alt="Logo"></a>
+            <a href="../index.html"><img src="../images/bird-2.png" alt="Logo"></a>
         </div>
         <ul class="nav-links">
-            <li><a th:classappend="${page == 'home'} ? 'active'" th:href="@{/home}">Home</a></li>
-            <li><a th:classappend="${page == 'action'} ? 'active'" th:href="@{/action}">Action</a></li>
-            <li><a th:classappend="${page == 'series'} ? 'active'" th:href="@{/series}">Series</a></li>
-            <li><a th:classappend="${page == 'contact'} ? 'active'" th:href="@{/contact}">Contact</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./action.html">Action</a></li>
+            <li><a href="./series.html">Series</a></li>
+            <li><a href="./contact.html">Contact</a></li>
         </ul>
         <div id="search-bar">
-            <form th:action="@{/search}" method="get">
+            <form action="./search.html" method="get">
                 <input type="text" name="title" placeholder="Search movies here ...">
                 <button class="btn" type="submit" name=""><i class="fa fa-search thin"></i></button>
             </form>
@@ -45,8 +45,8 @@
             <h4><i class="fas fa-map-marker-alt"></i>109 awolowo road ikoyi</h4>
         </div>
         <div id="auth">
-            <a th:href="@{/logout}"><i class="fa fa-sign-in"></i>Logout</a>
-            <a th:href="@{/form}"><i class="fa fa-user"></i>Dashboard</a>
+            <a href="/logout"><i class="fa fa-sign-in"></i>Logout</a>
+            <a href="/form"><i class="fa fa-user"></i>Dashboard</a>
         </div>
     </nav>
 </header>
@@ -102,18 +102,18 @@
 
             <div id="card-content">
 
-                <div class="card-body" th:each="movie : ${movies}">
+                <div class="card-body">
                     <div class="card">
-                        <a th:href="@{${movie.videoUrl}}">
+                        <a href="">
                             <div class="card-image">
-                                <img th:src="@{${movie.imageUrl}}" alt="Movie Image">
+                                <img src="../images/captain-america.webp" alt="Movie Image">
                             </div>
                             <div class="card-details">
                                 <div class="card-details-desc">
-                                    <h3 th:text="${movie.name}"></h3>
-                                    <h4 th:text="'Origin: ' + ${movie.origin}"></h4>
-                                    <h4 th:text="'Genre: ' + ${movie.genre}"></h4>
-                                    <h4 th:text="'Year: ' + ${movie.year}"></h4>
+                                    <h3>Title</h3>
+                                    <h4>Origin</h4>
+                                    <h4>Gnere</h4>
+                                    <h4>Year</h4>
                                 </div>
                                 <div class="card-play">
                                     <i class="fa fa-play-circle"></i>

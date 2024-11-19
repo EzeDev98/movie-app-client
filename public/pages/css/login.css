@@ -295,7 +295,7 @@ section {
 }
 
 #page1 .animated-bg {
-    background-image: url(/images/mortal-kombat.jpeg);
+    background-image: url(../../images/mortal-kombat.jpeg);
     background-color: rgba(0, 0, 0, 0.8);
     position: absolute;
     top: 0;
@@ -362,10 +362,11 @@ section {
 }
 
 #page2 #page-2-container #page-form #error-message:has(h3) {
-    display: block;
+    font-family: sans-serif;
+    font-weight: lighter;
+    font-size: clamp(.1rem, 2vw + .1rem, 1rem);
+    text-align: center;
     color: white;
-    font-size: 1rem;
-    font-weight: 200;
 }
 
 #page2 #page-2-container #page-form  #input-fields {
