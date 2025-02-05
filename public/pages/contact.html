@@ -8,184 +8,179 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link
-            href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Rajdhani:wght@300;400;500;600;700&display=swap"
-            rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/contact.css">
 </head>
 
 <body>
-<header>
-    <nav id="links-nav">
-        <div id="logo">
-            <a href="../index.html"><img src="../images/bird-2.png" alt="Logo"></a>
-        </div>
-        <ul class="nav-links">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="./action.html">Action</a></li>
-            <li><a href="./series.html">Series</a></li>
-            <li><a href="./contact.html">Contact</a></li>
-        </ul>
-        <div id="search-bar">
-            <form action="./search.html" method="get">
-                <input type="text" name="title" placeholder="Search movies here ...">
-                <button class="btn" type="submit" name=""><i class="fa fa-search thin"></i></button>
+    <header>
+        <nav id="links-nav">
+            <div id="logo">
+                <a href="/index.html"><img src="/images/bird-2.png" alt="Logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/pages/action.html">Action</a></li>
+                <li><a href="/pages/series.html">Series</a></li>
+                <li><a href="/pages/contact.html">Contact</a></li>
+            </ul>
+            <div id="search-bar">
+                <form action="/pages/search.html" method="get">
+                    <input type="text" name="title" placeholder="Search movies here ...">
+                    <button class="btn" type="submit" name=""><i class="fa fa-search thin"></i></button>
+                </form>
+            </div>
+            <div id="burger-menu">
+                <i class="fa fa-bars"></i>
+            </div>
+        </nav>
+        <div id="line"></div>
+        <nav id="address-nav" class="fade">
+            <div id="contact">
+                <h4><i class="fa fa-phone"></i>+2349022931212</h4>
+                <h4><i class="fa fa-envelope"></i>ezemosesjohn21997@gmail.com</h4>
+                <h4><i class="fas fa-map-marker-alt"></i>109 awolowo road ikoyi</h4>
+            </div>
+            <div id="auth">
+                <a class="showButton2" id="logoutLink"><i class="fa fa-sign-out"></i>Logout</a>
+                <a class="showButton2" href="/pages/dashboard.html"><i class="fa fa-tachometer-alt"></i>Dashboard</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="page1">
+           
+            <a href="#page2"><button class="btn-1"><i class="fas fa-arrow-down"></i></button></a>
+            <div class="animated-bg"></div>
+        </section>
+
+        <section id="page2">
+            <div id="loadingSpinner" class="d-none">
+                <div class="overlay">
+                    <div class="load">
+                        <div class="spinner" style="width: 6rem; height: 6rem;" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <form id="page-form" onsubmit="return false;">
+                <div id="error-message">
+                    <h4 id="error-text"></h4>
+                </div>
+                <div id="input-fields">
+                    <div class="input-box-container">
+                        <div class="input-box-content">
+                            <div class="input-box">
+                                <input id="fullname" type="text" name="fullname" required="required">
+                                <span class="input-box-text">Full Name</span>
+                                <span class="input-box-lines"></span>
+                            </div>
+                        </div>
+                        <div class="input-box-content">
+                            <div class="input-box">
+                                <input id="email" type="text" name="email" required="required">
+                                <span class="input-box-text">Email</span>
+                                <span class="input-box-lines"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-box-container">
+                        <div class="input-box-content">
+                            <div class="input-box">
+                                <input id="phonenumber" type="text" name="phonenumber" required="required">
+                                <span class="input-box-text">Phone Number</span>
+                                <span class="input-box-lines"></span>
+                            </div>
+                        </div>
+                        <div class="input-box-content">
+                            <div class="input-box">
+                                <input id="subject" type="text" name="subject" required="required">
+                                <span class="input-box-text">Subject</span>
+                                <span class="input-box-lines"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-box-container">
+                        <div class="input-box-content">
+                            <div class="input-box textarea">
+                                <textarea id="message" required="required"></textarea>
+                                <span class="input-box-text">Type Your Message Here...</span>
+                                <span class="input-box-lines"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-box-container">
+                        <div class="input-box-content">
+                            <input type="submit" value="send">
+                        </div>
+                    </div>
+                </div>
             </form>
-        </div>
-        <div id="burger-menu">
-            <i class="fa fa-bars"></i>
-        </div>
-    </nav>
-    <div id="line"></div>
-    <nav id="address-nav" class="fade">
-        <div id="contact">
-            <h4><i class="fa fa-phone"></i>+2349022931212</h4>
-            <h4><i class="fa fa-envelope"></i>ezemosesjohn21997@gmail.com</h4>
-            <h4><i class="fas fa-map-marker-alt"></i>109 awolowo road ikoyi</h4>
-        </div>
-        <div id="auth">
-            <a href="/logout"><i class="fa fa-sign-in"></i>Logout</a>
-            <a href="/form"><i class="fa fa-sign-in"></i>Dashboard</a>
-        </div>
-    </nav>
-</header>
-<main>
-    <section id="page1">
-        <div id="page-1-container-position">
-            <div class="page-1-container-content">
-                <h4>Contact us now</h4>
-                <div class="subscribe-container">
-                    <input type="text" name="email" placeholder="Enter your email here ...">
-                    <button class="btn" type="submit" name="">Send</button>
-                </div>
+
+        </section>
+    </main>
+    <footer>
+        <div id="footer-container">
+            <div id="footer-links">
+                <li><a href="" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                <li><a href="" target="_blank"><i class="fab fa-google"></i></a></li>
+            </div>
+
+            <div id="footer-links-1">
+                <li><a href="">Get App</a></li>
+                <li><a href="">Help</a></li>
+                <li><a href="">Site Index</a></li>
+                <li><a href="">MovieQuestPro</a></li>
+                <li><a href="">Box Office EzeDev</a></li>
+                <li><a href="">MovieQuest Developer</a></li>
+            </div>
+
+            <div id="footer-links-1">
+                <li><a href="">Press Room</a></li>
+                <li><a href="">Advertising</a></li>
+                <li><a href="">Jobs</a></li>
+                <li><a href="">Conditions of Use</a></li>
+                <li><a href="">Privacy Policy</a></li>
+                <li><a href="">Your Ads Privacy Choices</a></li>
+            </div>
+
+            <div id="patent">
+                <h4>eze's incorporation</h4>
+            </div>
+
+            <div id="copy-right">
+                <p>&#169;1990-2024 by ezedev.com, Inc.</p>
             </div>
         </div>
-        <a href="#page2"><button class="btn-1"><i class="fas fa-arrow-down"></i></button></a>
-        <div class="animated-bg"></div>
-    </section>
-    <section id="page2">
-        <form id="page-form" action="">
-            <div id="error-message">
-                <h3>Invalid login details! Login with the correct credentials</h3>
-            </div>
-            <div id="input-fields">
-                <div class="input-box-container">
-                    <div class="input-box-content">
-                        <div class="input-box">
-                            <input type="text" name="firstname" required="required">
-                            <span class="input-box-text">First Name</span>
-                            <span class="input-box-lines"></span>
-                        </div>
-                    </div>
-                    <div class="input-box-content">
-                        <div class="input-box">
-                            <input type="text" name="email" required="required">
-                            <span class="input-box-text">Email</span>
-                            <span class="input-box-lines"></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="input-box-container">
-                    <div class="input-box-content">
-                        <div class="input-box">
-                            <input type="text" name="phonenumber" required="required">
-                            <span class="input-box-text">Phone Number</span>
-                            <span class="input-box-lines"></span>
-                        </div>
-                    </div>
-                    <div class="input-box-content">
-                        <div class="input-box">
-                            <input type="text" name="subject" required="required">
-                            <span class="input-box-text">Subject</span>
-                            <span class="input-box-lines"></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="input-box-container">
-                    <div class="input-box-content">
-                        <div class="input-box textarea">
-                            <textarea required="required"></textarea>
-                            <span class="input-box-text">Type Your Message Here...</span>
-                            <span class="input-box-lines"></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="input-box-container">
-                    <div class="input-box-content">
-                        <input type="submit" value="send">
-                    </div>
-                </div>
-            </div>
-        </form>
+    </footer>
+    <script>
 
-    </section>
-</main>
-<footer>
-    <div id="footer-container">
-        <div id="footer-links">
-            <li><a href="" target="_blank"><i class="fab fa-facebook"></i></a></li>
-            <li><a href="" target="_blank"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="" target="_blank"><i class="fab fa-instagram"></i></a></li>
-            <li><a href="" target="_blank"><i class="fab fa-youtube"></i></a></li>
-            <li><a href="" target="_blank"><i class="fab fa-google"></i></a></li>
-        </div>
-
-        <div id="footer-links-1">
-            <li><a href="">Get App</a></li>
-            <li><a href="">Help</a></li>
-            <li><a href="">Site Index</a></li>
-            <li><a href="">MovieQuestPro</a></li>
-            <li><a href="">Box Office EzeDev</a></li>
-            <li><a href="">MovieQuest Developer</a></li>
-        </div>
-
-        <div id="footer-links-1">
-            <li><a href="">Press Room</a></li>
-            <li><a href="">Advertising</a></li>
-            <li><a href="">Jobs</a></li>
-            <li><a href="">Conditions of Use</a></li>
-            <li><a href="">Privacy Policy</a></li>
-            <li><a href="">Your Ads Privacy Choices</a></li>
-        </div>
-
-        <div id="patent">
-            <h4>eze's incorporation</h4>
-        </div>
-
-        <div id="copy-right">
-            <p>&#169;1990-2024 by ezedev.com, Inc.</p>
-        </div>
-    </div>
-</footer>
-<script>
-
-    // Add scroll event listener
-    window.addEventListener('scroll', function () {
-        var addressNav = document.getElementById('address-nav');
-        var linksNav = document.getElementById('links-nav');
-        var scrolled = window.scrollY > 0;
-        addressNav.classList.toggle('scrolled', scrolled);
-        linksNav.classList.toggle('scrolled', scrolled);
-    });
-
-    document.getElementById('burger-menu').addEventListener('click', function () {
-        var navLinks = document.querySelector('.nav-links');
-        navLinks.classList.toggle('active');
-    });
-
-    document.addEventListener('DOMContentLoaded', function() {
-        const currentPath = window.location.pathname;
-        const navLinks = document.querySelectorAll('.nav-links a');
-
-        navLinks.forEach(link => {
-            if (link.getAttribute('href') === currentPath) {
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
-            }
+        // Add scroll event listener
+        window.addEventListener('scroll', function () {
+            var addressNav = document.getElementById('address-nav');
+            var linksNav = document.getElementById('links-nav');
+            var scrolled = window.scrollY > 0;
+            addressNav.classList.toggle('scrolled', scrolled);
+            linksNav.classList.toggle('scrolled', scrolled);
         });
-    });
-</script>
+
+        document.getElementById('burger-menu').addEventListener('click', function () {
+            var navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        });
+
+    </script>
+    <script src="/dist/sessionValidation.bundle.js"></script>
+    <script src="/dist/logout.bundle.js"></script>
+    <script src="/dist/utils.bundle.js"></script>
+    <script src="/dist/contactPage.bundle.js"></script>
 </body>
 
 </html>

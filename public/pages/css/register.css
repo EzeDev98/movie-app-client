@@ -76,9 +76,14 @@ header {
     bottom: -4px;
 }
 
+.nav-links li a.active {
+    color: rgb(247, 243, 236);
+}
+
 .nav-links li a:hover::after,
 .nav-links li a.active::after {
     width: 100%;
+    color: rgb(247, 243, 236);
 }
 
 #search-bar {
@@ -329,6 +334,55 @@ section {
     box-sizing: border-box;
 }
 
+#loadingSpinner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+
+#loadingSpinner.d-none {
+    display: none;
+}
+
+#loadingSpinner .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#loadingSpinner .load .spinner {
+    border: 0.5rem solid #f3f3f3;
+    border-top: 0.5rem solid #270101;
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+    animation: spin 1s linear infinite;
+}
+
+#loadingSpinner .spinner .visually-hidden {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 #page2 #page-2-container {
     display: flex;
     align-items: center;
@@ -353,20 +407,31 @@ section {
     background: rgb(94, 0, 0, .1);
 }
 
-#page2 #page-2-container #page-form #error-message {
+#error-message {
     display: none;
-    background-color:#270101;
+    background-color:transparent;
     padding: clamp(1rem, 2vw, 2rem) 10px;
     width: 100%;
     box-sizing: border-box;
 }
 
-#page2 #page-2-container #page-form #error-message #error-text {
+#error-message.error {
+    background-color: #270101; 
+    color: white; 
+    border: none;  
+}
+
+#error-message.success {
+    background-color: rgba(3, 221, 17, 0.1); 
+    color: white; 
+    border: none; 
+}
+
+#error-message #error-text {
     font-family: sans-serif;
     font-weight: lighter;
     font-size: clamp(.1rem, 2vw + .1rem, 1rem);
     text-align: center;
-    color: white;
 }
 
 #page2 #page-2-container #page-form  #input-fields {
@@ -398,6 +463,27 @@ section {
     outline: none;
     position: relative;
 }
+
+#page2 #page-2-container #page-form  #input-fields .input-col .password-toggle {
+    position: relative;
+}
+  
+#page2 #page-2-container #page-form  #input-fields .input-col .password-toggle input {
+    padding-right: 40px;
+}
+  
+#page2 #page-2-container #page-form  #input-fields .input-col .password-toggle .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 14px;
+    z-index: 10;
+}
+  
 
 #page2 #page-2-container  #page-form  #input-fields .input-col .input-box input {
     width: 100%;
@@ -451,6 +537,11 @@ section {
 #page2 #page-2-container  #page-form  #input-fields .input-col .input-box input:focus~.input-box-lines,
 #page2 #page-2-container  #page-form  #input-fields .input-col .input-box input:valid~.input-box-lines {
     height: 100%;
+}
+
+#page2 #page-2-container  #page-form  #input-fields .input-col .input-box input:focus~.toggle-password,
+#page2 #page-2-container  #page-form  #input-fields .input-col .input-box input:valid~.toggle-password {
+    color: white;
 }
 
 #page2 #page-2-container  #page-form  #input-fields .input-box-btn {

@@ -75,9 +75,14 @@ header {
     bottom: -4px;
 }
 
+.nav-links li a.active {
+    color: rgb(247, 243, 236);
+}
+
 .nav-links li a:hover::after,
 .nav-links li a.active::after {
     width: 100%;
+    color: rgb(247, 243, 236);
 }
 
 #search-bar {
@@ -967,8 +972,8 @@ section {
     text-align: left;
     font-size: 15px;
     line-height: 2;
-    font-weight: bold;
     margin-bottom: 2rem;
+    font-family: "Inconsolata", monospace;
 }
 
 #page3 #page-container-3 #page-container-content-3 #page-3-container-content-3 #page-image-desc-3 #page-3-text-desc-align-3 #page-text-desc-3 a {

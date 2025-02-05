@@ -17,7 +17,7 @@
   "author": "Eze Moses",
   "license": "ISC",
   "devDependencies": {
-    "webpack": "^5.95.0",
+    "webpack": "^5.97.1",
     "webpack-cli": "^5.1.4"
   }
 }

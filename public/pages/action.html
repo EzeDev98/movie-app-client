@@ -7,9 +7,7 @@
     <title>Action movies</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link
-            href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Rajdhani:wght@300;400;500;600;700&display=swap"
-            rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Rajdhani:wght@300;400;500;600;700&display=swap"  rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/action.css">
 </head>
@@ -18,18 +16,20 @@
 <header>
     <nav id="links-nav">
         <div id="logo">
-            <a href="../index.html"><img src="../images/bird-2.png" alt="Logo"></a>
+            <a href="/index.html"><img src="/images/bird-2.png" alt="Logo"></a>
         </div>
         <ul class="nav-links">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="./action.html">Action</a></li>
-            <li><a href="./series.html">Series</a></li>
-            <li><a href="./contact.html">Contact</a></li>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/pages/action.html">Action</a></li>
+            <li><a href="/pages/series.html">Series</a></li>
+            <li><a href="/pages/contact.html">Contact</a></li>
         </ul>
         <div id="search-bar">
-            <form action="./search.html" method="get">
-                <input type="text" name="title" placeholder="Search movies here ...">
-                <button class="btn" type="submit" name=""><i class="fa fa-search thin"></i></button>
+            <form id="search_form" action="/pages/search.html" method="GET">
+                <input id="movie_title" type="text" name="title" placeholder="Search movies here ...">
+                <button id="search_movie" class="btn" type="submit">
+                    <i class="fa fa-search thin"></i>
+                </button>
             </form>
         </div>
         <div id="burger-menu">
@@ -44,8 +44,8 @@
             <h4><i class="fas fa-map-marker-alt"></i>109 awolowo road ikoyi</h4>
         </div>
         <div id="auth">
-            <a href="/logout"><i class="fa fa-sign-in"></i>Logout</a>
-            <a href="/form"><i class="fa fa-sign-in"></i>Dashboard</a>
+            <a class="showButton2" id="logoutLink"><i class="fa fa-sign-out"></i>Logout</a>
+            <a class="showButton2" href="/pages/dashboard.html"><i class="fa fa-tachometer-alt"></i>Dashboard</a>
         </div>
     </nav>
 </header>
@@ -61,17 +61,11 @@
                     <h4 class="movie-text-color">Korean</h4>
                 </div>
                 <div id="movie-desc">
-                    <p>Following the conquest of Gojoseon by Han China in 108 BCE,
-                        the surviving tribes and city-states of Manchuria and
-                        the northern Korean Peninsula are harshly subjugated as tributaries to the Han,
-                        who are portrayed as ruling with an iron fist from the Four Commanderies.
-                        Haemosu, the leader of the local resistance in the form of the Damul Army,
-                        covertly teams up with Prince Geumwa of Buyeo
-                        to defend and rescue Gojoseon refugees throughout the land...
+                    <p>As the drums of war echo across the realms, fierce champions with mystic powers and deadly techniques rise to answer the call. Scorpion, cloaked in vengeance and hellfire, seeks to right a personal wrong, while the enigmatic Sub-Zero wields the chill of ice to forge his own path of redemption. The storm clouds gather under the watchful gaze of Raiden, the thunderous protector of Earth, whose divine intervention guides these fighters on a perilous journey through realms of treachery and bloodshed....
                     </p>
                 </div>
                 <div id="movie-btn">
-                    <a class="active-color" href=""><i class="fa fa-play"></i>Play</a>
+                    <a class="active-color" href="/pages/play.html?videoId=EVB4a8eVeVw"><i class="fa fa-play"></i>Play</a>
                     <a href=""><i class="fa fa-cloud-download"></i>Download</a>
                 </div>
             </div>
@@ -117,10 +111,19 @@
         </div>
     </section>
     <section id="page2">
+        <div id="loadingSpinner" class="d-none">
+            <div class="overlay">
+                <div class="load">
+                    <div class="spinner" style="width: 6rem; height: 6rem;" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </div>  
         <div id="page-sections">
             <div id="page-section">
                 <div class="page-2-section-image">
-                    <img src="../images/captain-america.webp">
+                    <img src="/images/captain-america.webp">
                 </div>
                 <div id="page-section-2-overlay">
                     <div id="page-section-2-desc">
@@ -134,7 +137,217 @@
                             <i class="fa fa-star"></i>
                         </div>
                         <div id="page-play-icon">
-                            <a href=""><i class="fa fa-play"></i>Play now</a>
+                            <a href="/pages/play.html?videoId=quNcV0j2M0w"><i class="fa fa-play"></i>Play now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="page-section">
+                <div class="page-2-section-image">
+                    <img src="/images/prison_break.jpg">
+                </div>
+                <div id="page-section-2-overlay">
+                    <div id="page-section-2-desc">
+                        <h1>Prison Break</h1>
+                        <p>Prison Break is a gripping action-thriller series that follows Michael Scofield, a brilliant structural engineer who deliberately gets himself imprisoned to break out his wrongfully convicted brother, Lincoln Burrows, who is on death row. Using his intelligence, intricate tattoos hiding the prison's blueprint, and strategic alliances with fellow inmates, Michael orchestrates an elaborate escape. As the series progresses, the story expands beyond prison walls, involving government conspiracies, high-stakes chases, and a relentless battle for justice and survival. Known for its intense suspense, clever plot twists, and compelling characters, Prison Break is a high-stakes drama that keeps viewers on the edge of their seats.</p>
+                        <div id="page-rating-icons">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div id="page-play-icon">
+                            <a href="/pages/play.html?videoId=gfrB94_0o2M"><i class="fa fa-play"></i>Play now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="page-section">
+                <div class="page-2-section-image">
+                    <img src="/images/Spartacus.jpg">
+                </div>
+                <div id="page-section-2-overlay">
+                    <div id="page-section-2-desc">
+                        <h1>Spartacus</h1>
+                        <p>Spartacus is an epic historical drama that tells the story of the legendary Thracian gladiator who led a massive slave uprising against the Roman Republic. Betrayed and enslaved by the Romans, Spartacus rises through the brutal gladiatorial arena, forging unbreakable bonds with fellow warriors and eventually leading a rebellion against the oppressive Roman elite. The series (and the 1960 film) explores themes of freedom, loyalty, betrayal, and the struggle against tyranny, blending intense action, political intrigue, and deep character drama. Known for its visceral combat scenes, compelling storytelling, and raw emotional depth, Spartacus remains a powerful tale of resistance and heroism.</p>
+                        <div id="page-rating-icons">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div id="page-play-icon">
+                            <a href="/pages/play.html?videoId=0m9YFwvDfAc"><i class="fa fa-play"></i>Play now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="page-section">
+                <div class="page-2-section-image">
+                    <img src="/images/ong_baks.webp">
+                </div>
+                <div id="page-section-2-overlay">
+                    <div id="page-section-2-desc">
+                        <h1>Ong Bak</h1>
+                        <p>Ong Bak is a Thai martial arts action film that follows the journey of Ting, a skilled Muay Thai fighter from a rural village, who embarks on a dangerous mission to recover the stolen head of the sacred Ong Bak Buddha statue. Traveling to Bangkok, he is thrust into the city's criminal underworld, where he must use his incredible combat skills to fight ruthless gangs and underground fighters. Known for its jaw-dropping stunts, bone-crushing action, and Tony Jaa’s breathtaking Muay Thai choreography—performed without CGI or wire work—Ong Bak is a landmark in martial arts cinema, showcasing raw athleticism and traditional Thai fighting techniques.</p>
+                        <div id="page-rating-icons">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div id="page-play-icon">
+                            <a href="/pages/play.html?videoId=mVY2ZSKFeYI"><i class="fa fa-play"></i>Play now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="page-section">
+                <div class="page-2-section-image">
+                    <img src="/images/vikings.jpg">
+                </div>
+                <div id="page-section-2-overlay">
+                    <div id="page-section-2-desc">
+                        <h1>Vikings</h1>
+                        <p>Vikings is a historical drama series that follows the legendary Norse warrior Ragnar Lothbrok and his rise from a simple farmer to a powerful Viking chieftain and explorer. Inspired by Norse mythology and real historical events, the show delves into the brutal yet fascinating world of the Viking Age, showcasing epic battles, political intrigue, and the deep-seated traditions of Norse culture. As Ragnar seeks new lands to conquer, his ambitions put him at odds with both allies and enemies, leading to intense power struggles. The series also explores the lives of his descendants, including his fierce warrior sons, as they continue his legacy across Europe. With stunning visuals, gripping storytelling, and complex characters, Vikings offers a thrilling blend of history, adventure, and drama.</p>
+                        <div id="page-rating-icons">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div id="page-play-icon">
+                            <a href="/pages/play.html?videoId=IpNU0aqPG5o"><i class="fa fa-play"></i>Play now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="page-section">
+                <div class="page-2-section-image">
+                    <img src="/images/john_wick.webp">
+                </div>
+                <div id="page-section-2-overlay">
+                    <div id="page-section-2-desc">
+                        <h1>John Wick</h1>
+                        <p>John Wick is a high-octane action thriller that follows the story of a retired hitman, John Wick, who is forced back into the underworld after a group of criminals steal his car and kill his beloved dog—the last gift from his late wife. Fueled by grief and vengeance, Wick embarks on a relentless killing spree against the Russian mob, unleashing his legendary combat skills and earning a fearsome reputation. Known for its sleek choreography, intense gun-fu action, and a richly detailed assassin underworld, John Wick has become a modern action classic, redefining the genre with its stylish cinematography and gripping storytelling.</p>
+                        <div id="page-rating-icons">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div id="page-play-icon">
+                            <a href="/pages/play.html?videoId=XPN2AWm5l18"><i class="fa fa-play"></i>Play now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="page-section">
+                <div class="page-2-section-image">
+                    <img src="/images/fast_furious.jpeg">
+                </div>
+                <div id="page-section-2-overlay">
+                    <div id="page-section-2-desc">
+                        <h1>Fast & Fusrious</h1>
+                        <p>an adrenaline-fueled action franchise that centers on the world of underground street racing, high-stakes heists, and covert operations. The series begins with an undercover cop infiltrating a crew of street racers suspected of orchestrating major hijackings, setting off a chain of events that blur the lines between law enforcement and the criminal underworld. As the films progress, the narrative expands to feature globe-trotting missions, increasingly elaborate stunts, and a deep-rooted emphasis on themes of family, loyalty, and redemption. Known for its spectacular car chases, explosive action sequences, and charismatic ensemble cast, Fast & Furious has evolved into a cultural phenomenon that continues to captivate audiences worldwide.</p>
+                        <div id="page-rating-icons">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div id="page-play-icon">
+                            <a href="/pages/play.html?videoId=ot2T5gd8Dg8"><i class="fa fa-play"></i>Play now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="page-section">
+                <div class="page-2-section-image">
+                    <img src="/images/ninja_assassins.jpeg">
+                </div>
+                <div id="page-section-2-overlay">
+                    <div id="page-section-2-desc">
+                        <h1>Ninja Assassin</h1>
+                        <p>Ninja Assassin is a high-energy martial arts action film that follows the story of Raizo, a highly skilled warrior raised and trained by a brutal ninja clan. After enduring the dark and unforgiving world of secret assassins, Raizo grows disillusioned with the clan's ruthless ways and ultimately turns against them. Determined to seek revenge for his past and the atrocities committed against him and his loved ones, he embarks on a relentless quest, facing off against formidable foes in spectacular, acrobatic combat sequences. The film combines fast-paced action with intense fight choreography, immersing viewers in a shadowy world of honor, betrayal, and retribution.</p>
+                        <div id="page-rating-icons">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div id="page-play-icon">
+                            <a href="/pages/play.html?videoId=CIsFTkU2sds"><i class="fa fa-play"></i>Play now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="page-section">
+                <div class="page-2-section-image">
+                    <img src="/images/troy.jpeg">
+                </div>
+                <div id="page-section-2-overlay">
+                    <div id="page-section-2-desc">
+                        <h1>Troy</h1>
+                        <p>Troy is an epic historical war film that reimagines the legendary Trojan War, drawing inspiration from Homer's Iliad. The film centers on the conflict ignited by the abduction of Helen, the queen of Sparta, which leads to a full-scale siege of the ancient city of Troy by a coalition of Greek forces. Central to the story are the formidable warriors Achilles, whose unmatched prowess in battle is both a blessing and a curse, and Hector, Troy’s noble and courageous defender. As the Greeks and Trojans clash, the film explores themes of honor, fate, and the tragic consequences of human ambition, offering a dramatic portrayal of one of history's most famous and enduring legends.</p>
+                        <div id="page-rating-icons">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div id="page-play-icon">
+                            <a href="/pages/play.html?videoId=j-Ze3KEhKnM"><i class="fa fa-play"></i>Play now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="page-section">
+                <div class="page-2-section-image">
+                    <img src="/images/mission_impossible.jpeg">
+                </div>
+                <div id="page-section-2-overlay">
+                    <div id="page-section-2-desc">
+                        <h1>Mission Impossible</h1>
+                        <p>Impossible is a high-stakes espionage action film series that follows the daring exploits of Ethan Hunt, an elite operative working for the Impossible Mission Force (IMF). Tasked with thwarting global conspiracies and averting catastrophic threats, Hunt and his team tackle seemingly insurmountable challenges with ingenuity, precision, and breathtaking stunts. Known for its intricate plots, edge-of-your-seat suspense, and spectacular action sequences—often performed by Tom Cruise himself—the franchise has become a staple of modern spy thrillers, continually redefining what it means to pull off the impossible.</p>
+                        <div id="page-rating-icons">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div id="page-play-icon">
+                            <a href="/pages/play.html?videoId=lkAXF-G1J0Y"><i class="fa fa-play"></i>Play now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="page-section">
+                <div class="page-2-section-image">
+                    <img src="/images/mad_max.jpg">
+                </div>
+                <div id="page-section-2-overlay">
+                    <div id="page-section-2-desc">
+                        <h1>Mad Max Saga Furiosa</h1>
+                        <p>Fury Road is a high-octane, post-apocalyptic action film set in a desolate wasteland where society has collapsed. The story follows the reluctant hero Max Rockatansky, who becomes entangled in the desperate struggle for survival when he crosses paths with Imperator Furiosa—a determined rebel on a mission to rescue a group of enslaved women from a tyrannical warlord. As they embark on a relentless, adrenaline-fueled chase across the barren desert, Max and Furiosa form an uneasy alliance to fight against oppression and reclaim hope in a brutal, chaotic world. The film is celebrated for its innovative practical effects, intense action sequences, and a visually arresting narrative that redefines the modern action genre.</p>
+                        <div id="page-rating-icons">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div id="page-play-icon">
+                            <a href="/pages/play.html?videoId=1GBB4_7X0F8"><i class="fa fa-play"></i>Play now</a>
                         </div>
                     </div>
                 </div>
@@ -142,6 +355,9 @@
         </div>
     </section>
     <section id="page3">
+        <div id="error-message">
+            <h4 id="error-text"></h4>
+        </div>
         <div id="page-3-container">
             <div id="page-3-desc">
                 <h1>Subscribe for more fun</h1>
@@ -163,8 +379,8 @@
                         Year of production and producer of the movie,
                         can also be used to search for your choiced movie.
                     </p>
-                    <input type="text" name="email" placeholder="Enter your email here ...">
-                    <button class="btn" type="submit" name="">Subscribe</button>
+                    <input id="email" type="text" name="email" placeholder="Enter your email here ...">
+                    <button id="subscription_email" class="btn" type="submit" name="">Subscribe</button>
                 </div>
             </div>
         </div>
@@ -269,20 +485,12 @@
         }
     };
 
-    document.addEventListener('DOMContentLoaded', function() {
-        const currentPath = window.location.pathname;
-        const navLinks = document.querySelectorAll('.nav-links a');
-
-        navLinks.forEach(link => {
-            if (link.getAttribute('href') === currentPath) {
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
-            }
-        });
-    });
-
 </script>
+<script src="/dist/search.bundle.js"></script>
+<script src="/dist/actionPage.bundle.js"></script>
+<script src="/dist/sessionValidation.bundle.js"></script>
+<script src="/dist/logout.bundle.js"></script>
+<script src="/dist/utils.bundle.js"></script>
 </body>
 
 </html>

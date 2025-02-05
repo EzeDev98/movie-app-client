@@ -4,7 +4,8 @@
     padding: 0;
 }
 
-body, html {
+body,
+html {
     width: 100%;
     height: 100%;
     font-family: "Inconsolata", monospace;
@@ -25,11 +26,12 @@ header {
 }
 
 #links-nav.scrolled {
-    background:#270101;
+    background: #270101;
     transition: .5s ease-in-out;
 }
 
-#links-nav, #address-nav {
+#links-nav,
+#address-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -42,7 +44,7 @@ header {
     transition: .5s ease-in-out;
 }
 
- #logo img {
+#logo img {
     height: 60px;
     width: auto;
 }
@@ -76,9 +78,14 @@ header {
     bottom: -4px;
 }
 
+.nav-links li a.active {
+    color: rgb(247, 243, 236);
+}
+
 .nav-links li a:hover::after,
 .nav-links li a.active::after {
     width: 100%;
+    color: rgb(247, 243, 236);
 }
 
 #search-bar {
@@ -91,7 +98,8 @@ header {
     align-items: center;
 }
 
-#search-bar input, #search-bar button {
+#search-bar input,
+#search-bar button {
     height: 40px;
     display: flex;
     align-items: center;
@@ -110,7 +118,7 @@ header {
     background: transparent;
 }
 
-#search-bar input::placeholder{
+#search-bar input::placeholder {
     font-size: 11px;
     color: rgb(184, 179, 179);
     letter-spacing: 1.2px;
@@ -268,7 +276,7 @@ section {
     top: 25%;
 }
 
- #page1 .btn-1 {
+#page1 .btn-1 {
     border: 1px solid rgba(135, 131, 131, .2);
     background-color: #270101;
     padding: 1rem;
@@ -289,7 +297,7 @@ section {
     transition: .5s ease-in-out;
 }
 
-#page1  .btn-1 i {
+#page1 .btn-1 i {
     font-size: 1em;
     color: white;
 }
@@ -329,6 +337,55 @@ section {
     box-sizing: border-box;
 }
 
+#loadingSpinner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+
+#loadingSpinner.d-none {
+    display: none;
+}
+
+#loadingSpinner .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#loadingSpinner .load .spinner {
+    border: 0.5rem solid #f3f3f3;
+    border-top: 0.5rem solid #270101;
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+    animation: spin 1s linear infinite;
+}
+
+#loadingSpinner .spinner .visually-hidden {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 #page2 #page-2-container {
     display: flex;
     align-items: center;
@@ -353,23 +410,34 @@ section {
     background: rgb(94, 0, 0, .1);
 }
 
-#page2 #page-2-container #page-form #error-message {
+#error-message {
     display: none;
-    background-color:#270101;
+    background-color:transparent;
     padding: clamp(1rem, 2vw, 2rem) 10px;
     width: 100%;
     box-sizing: border-box;
 }
 
-#page2 #page-2-container #page-form #error-message:has(h3) {
+#error-message.error {
+    background-color: #270101; 
+    color: white; 
+    border: none;  
+}
+
+#error-message.success {
+    background-color: rgba(3, 221, 17, 0.1); 
+    color: white; 
+    border: none; 
+}
+
+#error-message #error-text {
     font-family: sans-serif;
     font-weight: lighter;
     font-size: clamp(.1rem, 2vw + .1rem, 1rem);
     text-align: center;
-    color: white;
 }
 
-#page2 #page-2-container #page-form  #input-fields {
+#page2 #page-2-container #page-form #input-fields {
     width: 100%;
     box-sizing: border-box;
     padding: 7%;
@@ -378,20 +446,20 @@ section {
     align-items: center;
 }
 
-#page2 #page-2-container #page-form  #input-fields h1 {
+#page2 #page-2-container #page-form #input-fields h1 {
     color: #270101;
     font-size: clamp(1rem, 2.5vw, 1.2rem);
     font-weight: 300;
 }
 
-#page2 #page-2-container #page-form  #input-fields .input-col {
+#page2 #page-2-container #page-form #input-fields .input-col {
     width: 100%;
     box-sizing: border-box;
     margin: 30px 0 20px;
     position: relative;
 }
 
-#page2 #page-2-container #page-form  #input-fields .input-col .input-box {
+#page2 #page-2-container #page-form #input-fields .input-col .input-box {
     width: 100%;
     height: 40px;
     color: #270101;
@@ -399,7 +467,27 @@ section {
     position: relative;
 }
 
-#page2 #page-2-container  #page-form  #input-fields .input-col .input-box input {
+#page2 #page-2-container #page-form #input-fields .input-col .password-toggle {
+    position: relative;
+}
+
+#page2 #page-2-container #page-form #input-fields .input-col .password-toggle input {
+    padding-right: 40px;
+}
+
+#page2 #page-2-container #page-form #input-fields .input-col .password-toggle .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 14px;
+    z-index: 10;
+}
+
+#page2 #page-2-container #page-form #input-fields .input-col .input-box input {
     width: 100%;
     height: 100%;
     background: transparent;
@@ -415,7 +503,7 @@ section {
     box-sizing: border-box;
 }
 
-#page2 #page-2-container  #page-form  #input-fields .input-col .input-box .input-box-text {
+#page2 #page-2-container #page-form #input-fields .input-col .input-box .input-box-text {
     position: absolute;
     top: 50%;
     left: 10px;
@@ -427,16 +515,15 @@ section {
     pointer-events: none;
 }
 
-#page2 #page-2-container  #page-form  #input-fields .input-col .input-box input:focus+.input-box-text,
-#page2 #page-2-container  #page-form  #input-fields .input-col .input-box input:valid+.input-box-text {
+#page2 #page-2-container #page-form #input-fields .input-col .input-box input:focus+.input-box-text,
+#page2 #page-2-container #page-form #input-fields .input-col .input-box input:valid+.input-box-text {
     top: -10px;
     left: -5px;
     font-size: 15px;
     color: #270101;
 }
 
-
-#page2 #page-2-container  #page-form  #input-fields .input-col .input-box .input-box-lines {
+#page2 #page-2-container #page-form #input-fields .input-col .input-box .input-box-lines {
     position: absolute;
     bottom: 0;
     display: block;
@@ -448,19 +535,24 @@ section {
     pointer-events: none;
 }
 
-#page2 #page-2-container  #page-form  #input-fields .input-col .input-box input:focus~.input-box-lines,
-#page2 #page-2-container  #page-form  #input-fields .input-col .input-box input:valid~.input-box-lines {
+#page2 #page-2-container #page-form #input-fields .input-col .input-box input:focus~.input-box-lines,
+#page2 #page-2-container #page-form #input-fields .input-col .input-box input:valid~.input-box-lines {
     height: 100%;
 }
 
-#page2 #page-2-container  #page-form  #input-fields .input-box-btn {
+#page2 #page-2-container #page-form #input-fields .input-col .input-box input:focus~.toggle-password,
+#page2 #page-2-container #page-form #input-fields .input-col .input-box input:valid~.toggle-password {
+    color: white;
+}
+
+#page2 #page-2-container #page-form #input-fields .input-box-btn {
     width: 100%;
     display: flex;
     justify-content: left;
     margin-top: 20px;
 }
 
-#page2 #page-2-container  #page-form  #input-fields .input-box-btn input {
+#page2 #page-2-container #page-form #input-fields .input-box-btn input {
     background: #270101;
     color: white;
     outline: none;
@@ -473,12 +565,12 @@ section {
     margin: 10px;
 }
 
-#page2 #page-2-container  #page-form  #input-fields .input-box-btn input:hover {
+#page2 #page-2-container #page-form #input-fields .input-box-btn input:hover {
     background-color: #3e0202;
     transition: .5s ease-in-out;
 }
 
-#page2 #page-2-container  #page-form  #input-fields #input-box-line-demacotor {
+#page2 #page-2-container #page-form #input-fields #input-box-line-demacotor {
     width: 100%;
     display: flex;
     align-items: center;
@@ -486,26 +578,26 @@ section {
     padding: clamp(1rem, 2vw, 2rem) 0;
 }
 
-#page2 #page-2-container  #page-form  #input-fields #input-box-line-demacotor .line-0 {
+#page2 #page-2-container #page-form #input-fields #input-box-line-demacotor .line-0 {
     width: 35%;
     height: 1px;
     background-color: silver;
 }
 
-#page2 #page-2-container  #page-form  #input-fields #input-box-line-demacotor h2 {
+#page2 #page-2-container #page-form #input-fields #input-box-line-demacotor h2 {
     color: rgb(74, 73, 73);
     font-size: clamp(0.55rem, 1.5vw, 15px);
     font-weight: 100;
     padding: 0 clamp(10px, 2vw, 25px);
 }
 
-#page2 #page-2-container  #page-form  #input-fields #input-box-auth-type {
+#page2 #page-2-container #page-form #input-fields #input-box-auth-type {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#page2 #page-2-container  #page-form  #input-fields #input-box-auth-type .auth-button {
+#page2 #page-2-container #page-form #input-fields #input-box-auth-type .auth-button {
     display: flex;
     align-items: center;
     text-align: center;
@@ -514,7 +606,7 @@ section {
     border-radius: 2px;
 }
 
-#page2 #page-2-container  #page-form  #input-fields #input-box-auth-type .auth-button a {
+#page2 #page-2-container #page-form #input-fields #input-box-auth-type .auth-button a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -523,7 +615,7 @@ section {
     width: 100%;
 }
 
-#page2 #page-2-container  #page-form  #input-fields #input-box-auth-type .auth-button i {
+#page2 #page-2-container #page-form #input-fields #input-box-auth-type .auth-button i {
     height: 100%;
     display: flex;
     align-items: center;
@@ -533,40 +625,40 @@ section {
     font-size: 14px;
 }
 
-#page2 #page-2-container  #page-form  #input-fields #input-box-auth-type .auth-button h6 {
+#page2 #page-2-container #page-form #input-fields #input-box-auth-type .auth-button h6 {
     padding: 0 13px;
     text-align: center;
     font-size: 14px;
     font-weight: 400;
 }
 
-#page2 #page-2-container  #page-form  #input-fields #input-box-auth-type #facebook-auth {
+#page2 #page-2-container #page-form #input-fields #input-box-auth-type #facebook-auth {
     background-color: #1e58a3;
 }
 
-#page2 #page-2-container  #page-form  #input-fields #input-box-auth-type #facebook-auth i {
+#page2 #page-2-container #page-form #input-fields #input-box-auth-type #facebook-auth i {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
-#page2 #page-2-container  #page-form  #input-fields #input-box-auth-type #google-auth {
+#page2 #page-2-container #page-form #input-fields #input-box-auth-type #google-auth {
     background-color: #DB4437;
 }
 
-#page2 #page-2-container  #page-form  #input-fields #input-box-auth-type #google-auth i {
+#page2 #page-2-container #page-form #input-fields #input-box-auth-type #google-auth i {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
-#page2 #page-2-container  #page-form  #input-fields #input-box-auth-question {
+#page2 #page-2-container #page-form #input-fields #input-box-auth-question {
     width: 100%;
     margin: clamp(1rem, 2vw, 1.5rem) 0;
 }
 
-#page2 #page-2-container  #page-form  #input-fields #input-box-auth-question h3 {
+#page2 #page-2-container #page-form #input-fields #input-box-auth-question h3 {
     font-size: clamp(0.875rem, 1.5vw, 15px);
     font-weight: 300;
 }
 
-#page2 #page-2-container  #page-form  #input-fields #input-box-auth-question a {
+#page2 #page-2-container #page-form #input-fields #input-box-auth-question a {
     text-decoration: none;
     color: black;
 }
@@ -734,4 +826,3 @@ footer {
         display: none;
     }
 }
-

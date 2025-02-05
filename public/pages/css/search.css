@@ -74,9 +74,14 @@ header {
     bottom: -4px;
 }
 
+.nav-links li a.active {
+    color: rgb(247, 243, 236);
+}
+
 .nav-links li a:hover::after,
 .nav-links li a.active::after {
     width: 100%;
+    color: rgb(247, 243, 236);
 }
 
 #search-bar {
@@ -199,6 +204,82 @@ section {
     background-color: #000;
     padding: 0;
     margin: 0;
+}
+
+#loadingSpinner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+
+#loadingSpinner.d-none {
+    display: none;
+}
+
+#loadingSpinner .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#loadingSpinner .load .spinner {
+    border: 0.5rem solid #f3f3f3;
+    border-top: 0.5rem solid #270101;
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+    animation: spin 1s linear infinite;
+}
+
+#loadingSpinner .spinner .visually-hidden {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#card-container #error-message {
+    display: none;
+    background-color:#270101;
+    padding: clamp(1rem, 2vw, 2rem) 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#card-container #error-message.error {
+    background-color: #744a4a; 
+    color: #ffebee; 
+    border: none; 
+}
+
+#card-container #error-message.success {
+    background-color: #8da88f; 
+    color: #e8f5e9; 
+    border: none; 
+}
+
+#card-container #error-message #error-text {
+    font-family: sans-serif;
+    font-weight: lighter;
+    font-size: clamp(.1rem, 2vw + .1rem, 1rem);
+    text-align: center;
 }
 
 .main-bg {
@@ -572,6 +653,20 @@ section {
     z-index: 10;
     margin: 5rem auto;
     padding-top: 20%;
+}
+
+.metadata {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+}
+
+.metadata span {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
 }
 
 #card-container .heading-desc {
