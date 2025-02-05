@@ -16,18 +16,20 @@
 <header>
     <nav id="links-nav">
         <div id="logo">
-            <a href="index.html"><img src="./images/bird-2.png" alt="Logo"></a>
+            <a href="index.html"><img src="/images/bird-2.png" alt="Logo"></a>
         </div>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="./pages/action.html">Action</a></li>
-            <li><a href="./pages/series.html">Series</a></li>
-            <li><a href="./pages/contact.html">Contact</a></li>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/pages/action.html">Action</a></li>
+            <li><a href="/pages/series.html">Series</a></li>
+            <li><a href="/pages/contact.html">Contact</a></li>
         </ul>
         <div id="search-bar">
-            <form action="/search" method="get">
-                <input type="text" name="title" placeholder="Search movies here ...">
-                <button class="btn" type="submit"><i class="fa fa-search thin"></i></button>
+            <form id="search_form" action="/pages/search.html" method="GET">
+                <input id="movie_title" type="text" name="title" placeholder="Search movies here ...">
+                <button id="search_movie" class="btn" type="submit">
+                    <i class="fa fa-search thin"></i>
+                </button>
             </form>
         </div>
         <div id="burger-menu">
@@ -41,22 +43,37 @@
             <h4><i class="fa fa-envelope"></i>ezemosesjohn21997@gmail.com</h4>
             <h4><i class="fas fa-map-marker-alt"></i>109 awolowo road ikoyi</h4>
         </div>
+
         <div id="auth">
-            <a href="./pages/login.html"><i class="fa fa-sign-in"></i>Login</a>
-            <a href="./pages/register.html"><i class="fa fa-user"></i>Register</a>
-            <!-- <a href="/logout"><i class="fa fa-sign-in"></i>Logout</a>
-            <a href="/form"><i class="fa fa-sign-in"></i>Dashboard</a> -->
+            <a class="showButton1" href="/pages/login.html"><i class="fa fa-sign-in"></i>Login</a>
+            <a class="showButton1" href="/pages/register.html"><i class="fa fa-user"></i>Register</a>
+        
+            <a class="showButton2" id="logoutLink"><i class="fa fa-sign-out"></i>Logout</a>
+            <a class="showButton2" href="/pages/dashboard.html"><i class="fa fa-tachometer-alt"></i>Dashboard</a>
         </div>
     </nav>
 </header>
 <main>
     <section id="page1">
+
+        <div id="loadingSpinner" class="d-none">
+            <div class="overlay">
+                <div class="load">
+                    <div class="spinner" style="width: 6rem; height: 6rem;" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
         <div class="page1">
             <h1>Unleashing a thrilling quest for continuous entertainment</h1>
             <h4>Enter your movie preferences here either by title or keyword</h4>
-            <form action="/search" method="get">
-                <input type="text" name="text" placeholder="Search movies here ...">
-                <button class="btn" type="submit"><i class="fa fa-paper-plane"></i></button>
+            <form id="search_form" action="/pages/search.html" method="GET">
+                <input id="movie_title" type="text" name="title" placeholder="Search movies here ...">
+                <button id="search_movie" class="btn" type="submit">
+                    <i class="fa fa-search thin"></i>
+                </button>
             </form>
         </div>
         <div class="animated-bg">
@@ -100,24 +117,27 @@
         </div>
     </section>
     <section id="page2">
+        <div id="error-message">
+            <h4 id="error-text"></h4>
+        </div>
         <div id="page-2-container">
             <div id="page-2-description">
                 <h3>Subscribing to our platform gives you access to watch any movie on your smart TV for free</h3>
-                <a class="sub-btn" href="">Subscribe now</a>
+                <a id="subscription_email" class="sub-btn" href="">Subscribe now</a>
             </div>
             <div id="page-2-image">
-                <img src="./images/stv.jpeg">
+                <img src="/images/stv.jpeg">
             </div>
         </div>
     </section>
     <section id="page2" class="page-bg-color">
         <div id="page-2-container">
             <div id="page-2-image">
-                <img src="./images/phone.jpg">
+                <img src="/images/phone.jpg">
             </div>
             <div id="page-2-description">
                 <h3>You can also access our TV shows, action movies, and series on your smartphones</h3>
-                <a class="sub-btn" href="">Watch now</a>
+                <a class="sub-btn" href="/pages/play.html?videoId=uCqUv9rm7-M">Watch now</a>
             </div>
         </div>
     </section>
@@ -127,7 +147,7 @@
                 <h2>We have very interesting and educational videos for kids</h2>
                 <h3>You can set parental controls to censor your children's activities on the platform</h3>
                 <h3>Children are thereby protected from viewing adult content</h3>
-                <a href="">Try it now</a>
+                <a href="/pages/play.html?videoId=xyktegYA62E">Try it now</a>
             </div>
         </div>
     </section>
@@ -170,7 +190,7 @@
     </div>
 </footer>
 <script>
-    // Add scroll event listener
+
     window.addEventListener('scroll', function () {
         var addressNav = document.getElementById('address-nav');
         var linksNav = document.getElementById('links-nav');
@@ -184,19 +204,11 @@
         navLinks.classList.toggle('active');
     });
 
-    document.addEventListener('DOMContentLoaded', function() {
-        const currentPath = window.location.pathname;
-        const navLinks = document.querySelectorAll('.nav-links a');
-
-        navLinks.forEach(link => {
-            if (link.getAttribute('href') === currentPath) {
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
-            }
-        });
-    });
 </script>
+<script src="/dist/logout.bundle.js"></script>
+<script src="/dist/utils.bundle.js"></script>
+<script src="/dist/search.bundle.js"></script>
+<script src="/dist/index.bundle.js"></script>
 </body>
 
 </html>

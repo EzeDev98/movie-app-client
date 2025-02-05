@@ -17,18 +17,20 @@
 <header>
     <nav id="links-nav">
         <div id="logo">
-            <a href="../index.html"><img src="../images/bird-2.png" alt="Logo"></a>
+            <a href="/index.html"><img src="/images/bird-2.png" alt="Logo"></a>
         </div>
         <ul class="nav-links">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="./action.html">Action</a></li>
-            <li><a href="./series.html">Series</a></li>
-            <li><a href="./contact.html">Contact</a></li>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/pages/action.html">Action</a></li>
+            <li><a href="/pages/series.html">Series</a></li>
+            <li><a href="/pages/contact.html">Contact</a></li>
         </ul>
         <div id="search-bar">
-            <form action="./search.html">
-                <input type="text" name="title" placeholder="Search movies here ...">
-                <button class="btn" type="submit" name=""><i class="fa fa-search thin"></i></button>
+            <form id="search_form" action="/pages/search.html" method="GET">
+                <input id="movie_title" type="text" name="title" placeholder="Search movies here ...">
+                <button id="search_movie" class="btn" type="submit">
+                    <i class="fa fa-search thin"></i>
+                </button>
             </form>
         </div>
         <div id="burger-menu">
@@ -43,8 +45,8 @@
             <h4><i class="fas fa-map-marker-alt"></i>109 awolowo road ikoyi</h4>
         </div>
         <div id="auth">
-            <a href="/logout"><i class="fa fa-sign-in"></i>Logout</a>
-            <a href="/logout"><i class="fa fa-sign-in"></i>Dashboard</a>
+            <a class="showButton2" id="logoutLink"><i class="fa fa-sign-out"></i>Logout</a>
+            <a class="showButton2" href="/pages/dashboard.html"><i class="fa fa-tachometer-alt"></i>Dashboard</a>
         </div>
     </nav>
 </header>
@@ -52,7 +54,7 @@
     <section id="page1">
         <div id="page-1-container-position">
             <div id="page-1-container">
-                <h1>Mortal Kombat</h1>
+                <h1>Jumong</h1>
                 <div id="movie-desc-head">
                     <h4>2020<span class="movie-line-sep"></span></h4>
                     <h4>Series<span class="movie-line-sep"></span></h4>
@@ -70,7 +72,7 @@
                     </p>
                 </div>
                 <div id="movie-btn">
-                    <a class="active-color" href=""><i class="fa fa-play"></i>Play</a>
+                    <a class="active-color" href="/pages/play.html?videoId=BW9s6Is8zck"><i class="fa fa-play"></i>Play</a>
                     <a href=""><i class="fa fa-cloud-download"></i>Download</a>
                 </div>
             </div>
@@ -122,7 +124,7 @@
                 <div id="page-2-container-content">
                     <div id="page-image-desc">
                         <div id="page-2-image-animate">
-                            <img src="../images/merlin-rm.jpg">
+                            <img src="/images/merlin-rm.jpg">
                             <div class="flame-content">
                                 <div class="flame"></div>
                             </div>
@@ -143,7 +145,7 @@
                             by focusing on the two characters when they were ambitious young men struggling to
                             understand their destinies. In this telling, Prince Arthur is known to be the heir.
                         </p>
-                        <a href=""><i class="fa fa-play-circle"></i>Watch now</a>
+                        <a href="/pages/play.html?videoId=a2iUtWQcsro"><i class="fa fa-play-circle"></i>Watch now</a>
                     </div>
                 </div>
             </div>
@@ -165,16 +167,17 @@
                             </div>
                             <div id="page-text-desc-3">
                                 <h1>Story line:</h1>
-                                <p>This action-packed fantasy-drama revisits the saga of King Arthur and his wizard, Merlin,
-                                    by focusing on the two characters when they were ambitious young men struggling to
-                                    understand their destinies. In this telling, Prince Arthur is known to be the heir.
+                                <p>
+                                    Every duel is more than a clash of fists and fury-it is a battle against fate,
+                                    where each combatant's unique spirit and history are put on trial.
+                                    With honor, wrath, and the ghostly promise of fatality, they stride toward a destiny that will either unite the worlds or tear them asunder...
                                 </p>
-                                <a href=""><i class="fa fa-play-circle"></i>Watch now</a>
+                                <a href="/pages/play.html?videoId=Cwumhvq1FEA"><i class="fa fa-play-circle"></i>Watch now</a>
                             </div>
                         </div>
                     </div>
                     <div id="page-3-image-animate">
-                        <img src="../images/SubZero.png">
+                        <img src="/images/SubZero.png">
                         <div class="sub-cover">
                             <div class="circle"></div>
                             <SVG>
@@ -197,21 +200,21 @@
             <h1 id="faq-title">Frequently Asked Questions</h1>
             <div class="faq-container">
                 <div class="faq-questions">
-                    <h3>How many seasons has Vikings ?</h3>
+                    <h3>How many seasons has Merlin ?</h3>
 
                     <svg width="15" height="10" viewBox="0 0 42 25">
-                        <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round" />
+                        <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
                     </svg>
                 </div>
                 <div class="faq-answers">
                     <p>
-                        The TV series Vikings has a total of 6 seasons. The show originally aired from 2013 to 2020.
+                        The TV series Merlin has a total of 5 seasons. The show originally aired from 2008 to 2012.
                     </p>
                 </div>
             </div>
             <div class="faq-container">
                 <div class="faq-questions">
-                    <h3>How did Ragnar Lothbrok died ?</h3>
+                    <h3>How did Ragnar Lothbrok died?</h3>
 
                     <svg width="15" height="10" viewBox="0 0 42 25">
                         <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round" />
@@ -305,20 +308,11 @@
             parent.classList.toggle('active');
         });
     });
-
-    document.addEventListener('DOMContentLoaded', function() {
-        const currentPath = window.location.pathname;
-        const navLinks = document.querySelectorAll('.nav-links a');
-
-        navLinks.forEach(link => {
-            if (link.getAttribute('href') === currentPath) {
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
-            }
-        });
-    });
 </script>
+<script src="/dist/search.bundle.js"></script>
+<script src="/dist/sessionValidation.bundle.js"></script>
+<script src="/dist/logout.bundle.js"></script>
+<script src="/dist/utils.bundle.js"></script>
 </body>
 
 </html>

@@ -75,9 +75,14 @@ header {
     bottom: -4px;
 }
 
+.nav-links li a.active {
+    color: rgb(247, 243, 236);
+}
+
 .nav-links li a:hover::after,
 .nav-links li a.active::after {
     width: 100%;
+    color: rgb(247, 243, 236);
 }
 
 #search-bar {
@@ -89,7 +94,6 @@ header {
     display: flex;
     align-items: center;
 }
-
 
 #search-bar input, #search-bar button {
     height: 40px;
@@ -181,7 +185,6 @@ header {
     background-color: rgba(255, 255, 255, 0.05);
 }
 
-
 section {
     width: 100%;
     padding: 50px 20px;
@@ -191,6 +194,84 @@ section {
     align-items: center;
     text-align: center;
     overflow: hidden;
+}
+
+#loadingSpinner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+
+#loadingSpinner.d-none {
+    display: none;
+}
+
+#loadingSpinner .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#loadingSpinner .load .spinner {
+    border: 0.5rem solid #f3f3f3;
+    border-top: 0.5rem solid #270101;
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+    animation: spin 1s linear infinite;
+}
+
+#loadingSpinner .spinner .visually-hidden {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#error-message {
+    display: none;
+    background-color: #270101;
+    padding: clamp(1rem, 2vw, 2rem) 10px;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 9999;
+    margin-bottom: 8rem;
+}
+
+#error-message.error {
+    background-color: #270101;
+    color: white; 
+    border: none; 
+}
+
+#error-message.success {
+    background-color: rgb(60, 131, 65); 
+    color: white; 
+    border: none; 
+}
+
+#error-message #error-text {
+    font-family: sans-serif;
+    font-weight: lighter;
+    font-size: clamp(.1rem, 2vw + .1rem, 1rem);
+    text-align: center;
 }
 
 #page1 {
@@ -805,7 +886,6 @@ section {
     letter-spacing: 1px;
 }
 
-
 #page3 .modal {
     display: none;
     position: absolute;
@@ -833,7 +913,6 @@ section {
     margin: auto;
 }
 
-
 #page3 .modal-content .send-email-message h1 {
     font-size: clamp(.3rem, 1.5vw + .3rem, 1.3rem);
     padding: 1rem 0;
@@ -857,7 +936,6 @@ section {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     outline: none;
-
 }
 
 #page3 .modal-content .send-email-message button {

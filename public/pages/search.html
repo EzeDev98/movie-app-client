@@ -8,187 +8,177 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link
-            href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Rajdhani:wght@300;400;500;600;700&display=swap"
-            rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/search.css">
 </head>
 
 <body>
-<header>
-    <nav id="links-nav">
-        <div id="logo">
-            <a href="../index.html"><img src="../images/bird-2.png" alt="Logo"></a>
-        </div>
-        <ul class="nav-links">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="./action.html">Action</a></li>
-            <li><a href="./series.html">Series</a></li>
-            <li><a href="./contact.html">Contact</a></li>
-        </ul>
-        <div id="search-bar">
-            <form action="./search.html" method="get">
-                <input type="text" name="title" placeholder="Search movies here ...">
-                <button class="btn" type="submit" name=""><i class="fa fa-search thin"></i></button>
-            </form>
-        </div>
-        <div id="burger-menu">
-            <i class="fa fa-bars"></i>
-        </div>
-    </nav>
-    <div id="line"></div>
-    <nav id="address-nav" class="fade">
-        <div id="contact">
-            <h4><i class="fa fa-phone"></i>+2349022931212</h4>
-            <h4><i class="fa fa-envelope"></i>ezemosesjohn21997@gmail.com</h4>
-            <h4><i class="fas fa-map-marker-alt"></i>109 awolowo road ikoyi</h4>
-        </div>
-        <div id="auth">
-            <a href="/logout"><i class="fa fa-sign-in"></i>Logout</a>
-            <a href="/form"><i class="fa fa-user"></i>Dashboard</a>
-        </div>
-    </nav>
-</header>
-<main>
-    <section id="page1">
-        <div class="animated-bg">
-            <div id="dot"></div>
-            <div id="dot"></div>
-            <div id="dot"></div>
-            <div id="dot"></div>
-            <div id="dot"></div>
-            <div id="dot"></div>
-            <div id="dot"></div>
-            <div id="dot"></div>
-            <div id="dot"></div>
-            <div id="dot"></div>
-            <div id="dot"></div>
-            <div id="dot"></div>
-            <div id="dot"></div>
-            <div id="dot"></div>
-            <div id="dot"></div>
-            <div id="dot"></div>
-            <div id="dot"></div>
-            <div id="dot"></div>
-            <div id="dot"></div>
-            <div id="dot"></div>
-            <div id="dot"></div>
-            <div id="dot"></div>
-            <div id="dot"></div>
-            <div id="dot"></div>
-            <div id="dot"></div>
-            <div id="dot"></div>
-            <div id="dot"></div>
-            <div id="dot"></div>
-            <div id="dot"></div>
-            <div id="dot"></div>
-            <div id="dot"></div>
-            <div id="dot"></div>
-            <div id="dot"></div>
-            <div id="dot"></div>
-            <div id="dot"></div>
-            <div id="dot"></div>
-        </div>
-        <div class="main-bg">
-            <div class="stars"></div>
-            <div class="twinkl"></div>
-        </div>
-
-        <div id="card-container">
-            <div class="heading-desc">
-                <h1>Search results</h1>
+    <header>
+        <nav id="links-nav">
+            <div id="logo">
+                <a href="/index.html"><img src="/images/bird-2.png" alt="Logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/pages/action.html">Action</a></li>
+                <li><a href="/pages/series.html">Series</a></li>
+                <li><a href="/pages/contact.html">Contact</a></li>
+            </ul>
+            <div id="search-bar">
+                <form id="search_form" action="/pages/search.html" method="GET">
+                    <input id="movie_title" type="text" name="title" placeholder="Search movies here ...">
+                    <button id="search_movie" class="btn" type="submit">
+                        <i class="fa fa-search thin"></i>
+                    </button>
+                </form>
+            </div>
+            <div id="burger-menu">
+                <i class="fa fa-bars"></i>
+            </div>
+        </nav>
+        <div id="line"></div>
+        <nav id="address-nav" class="fade">
+            <div id="contact">
+                <h4><i class="fa fa-phone"></i>+2349022931212</h4>
+                <h4><i class="fa fa-envelope"></i>ezemosesjohn21997@gmail.com</h4>
+                <h4><i class="fas fa-map-marker-alt"></i>109 awolowo road ikoyi</h4>
+            </div>
+            <div id="auth">
+                <a class="showButton2" id="logoutLink"><i class="fa fa-sign-out"></i>Logout</a>
+                <a class="showButton2" href="/pages/dashboard.html"><i class="fa fa-tachometer-alt"></i>Dashboard</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="page1">
+            <div class="animated-bg">
+                <div id="dot"></div>
+                <div id="dot"></div>
+                <div id="dot"></div>
+                <div id="dot"></div>
+                <div id="dot"></div>
+                <div id="dot"></div>
+                <div id="dot"></div>
+                <div id="dot"></div>
+                <div id="dot"></div>
+                <div id="dot"></div>
+                <div id="dot"></div>
+                <div id="dot"></div>
+                <div id="dot"></div>
+                <div id="dot"></div>
+                <div id="dot"></div>
+                <div id="dot"></div>
+                <div id="dot"></div>
+                <div id="dot"></div>
+                <div id="dot"></div>
+                <div id="dot"></div>
+                <div id="dot"></div>
+                <div id="dot"></div>
+                <div id="dot"></div>
+                <div id="dot"></div>
+                <div id="dot"></div>
+                <div id="dot"></div>
+                <div id="dot"></div>
+                <div id="dot"></div>
+                <div id="dot"></div>
+                <div id="dot"></div>
+                <div id="dot"></div>
+                <div id="dot"></div>
+                <div id="dot"></div>
+                <div id="dot"></div>
+                <div id="dot"></div>
+                <div id="dot"></div>
+            </div>
+            <div class="main-bg">
+                <div class="stars"></div>
+                <div class="twinkl"></div>
             </div>
 
-            <div id="card-content">
+            <div id="card-container">
 
-                <div class="card-body">
-                    <div class="card">
-                        <a href="">
-                            <div class="card-image">
-                                <img src="../images/captain-america.webp" alt="Movie Image">
+                <div id="loadingSpinner" class="d-none">
+                    <div class="overlay">
+                        <div class="load">
+                            <div class="spinner" style="width: 6rem; height: 6rem;" role="status">
+                                <span class="visually-hidden">Loading...</span>
                             </div>
-                            <div class="card-details">
-                                <div class="card-details-desc">
-                                    <h3>Title</h3>
-                                    <h4>Origin</h4>
-                                    <h4>Gnere</h4>
-                                    <h4>Year</h4>
-                                </div>
-                                <div class="card-play">
-                                    <i class="fa fa-play-circle"></i>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                        </a>
+                        </div>
                     </div>
+                </div> 
+
+                <div id="error-message">
+                    <h4 id="error-text"></h4>
                 </div>
 
+                <div class="heading-desc">
+                    <h1>Search results</h1>
+                </div>   
+
+                <div id="card-content"></div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div id="footer-container">
+            <div id="footer-links">
+                <li><a href="" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                <li><a href="" target="_blank"><i class="fab fa-google"></i></a></li>
+            </div>
+
+            <div id="footer-links-1">
+                <li><a href="">Get App</a></li>
+                <li><a href="">Help</a></li>
+                <li><a href="">Site Index</a></li>
+                <li><a href="">MovieQuestPro</a></li>
+                <li><a href="">Box Office EzeDev</a></li>
+                <li><a href="">MovieQuest Developer</a></li>
+            </div>
+
+            <div id="footer-links-1">
+                <li><a href="">Press Room</a></li>
+                <li><a href="">Advertising</a></li>
+                <li><a href="">Jobs</a></li>
+                <li><a href="">Conditions of Use</a></li>
+                <li><a href="">Privacy Policy</a></li>
+                <li><a href="">Your Ads Privacy Choices</a></li>
+            </div>
+
+            <div id="patent">
+                <h4>eze's incorporation</h4>
+            </div>
+
+            <div id="copy-right">
+                <p>&#169;1990-2024 by ezedev.com, Inc.</p>
             </div>
         </div>
-    </section>
-</main>
-<footer>
-    <div id="footer-container">
-        <div id="footer-links">
-            <li><a href="" target="_blank"><i class="fab fa-facebook"></i></a></li>
-            <li><a href="" target="_blank"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="" target="_blank"><i class="fab fa-instagram"></i></a></li>
-            <li><a href="" target="_blank"><i class="fab fa-youtube"></i></a></li>
-            <li><a href="" target="_blank"><i class="fab fa-google"></i></a></li>
-        </div>
+    </footer>
+    <script>
 
-        <div id="footer-links-1">
-            <li><a href="">Get App</a></li>
-            <li><a href="">Help</a></li>
-            <li><a href="">Site Index</a></li>
-            <li><a href="">MovieQuestPro</a></li>
-            <li><a href="">Box Office EzeDev</a></li>
-            <li><a href="">MovieQuest Developer</a></li>
-        </div>
+        // Add scroll event listener
+        window.addEventListener('scroll', function () {
+            var addressNav = document.getElementById('address-nav');
+            var linksNav = document.getElementById('links-nav');
+            var scrolled = window.scrollY > 0;
+            addressNav.classList.toggle('scrolled', scrolled);
+            linksNav.classList.toggle('scrolled', scrolled);
+        });
 
-        <div id="footer-links-1">
-            <li><a href="">Press Room</a></li>
-            <li><a href="">Advertising</a></li>
-            <li><a href="">Jobs</a></li>
-            <li><a href="">Conditions of Use</a></li>
-            <li><a href="">Privacy Policy</a></li>
-            <li><a href="">Your Ads Privacy Choices</a></li>
-        </div>
+        document.getElementById('burger-menu').addEventListener('click', function () {
+            var navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        });
 
-        <div id="patent">
-            <h4>eze's incorporation</h4>
-        </div>
-
-        <div id="copy-right">
-            <p>&#169;1990-2024 by ezedev.com, Inc.</p>
-        </div>
-    </div>
-</footer>
-<script>
-
-    // Add scroll event listener
-    window.addEventListener('scroll', function () {
-        var addressNav = document.getElementById('address-nav');
-        var linksNav = document.getElementById('links-nav');
-        var scrolled = window.scrollY > 0;
-        addressNav.classList.toggle('scrolled', scrolled);
-        linksNav.classList.toggle('scrolled', scrolled);
-    });
-
-    document.getElementById('burger-menu').addEventListener('click', function () {
-        var navLinks = document.querySelector('.nav-links');
-        navLinks.classList.toggle('active');
-    });
-
-</script>
+    </script>
+    <script src="/dist/search.bundle.js"></script>
+    <script src="/dist/sessionValidation.bundle.js"></script>
+    <script src="/dist/logout.bundle.js"></script>
+    <script src="/dist/utils.bundle.js"></script>
 </body>
 
 </html>

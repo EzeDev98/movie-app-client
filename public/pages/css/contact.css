@@ -76,9 +76,14 @@ header {
     bottom: -4px;
 }
 
+.nav-links li a.active {
+    color: rgb(247, 243, 236);
+}
+
 .nav-links li a:hover::after,
 .nav-links li a.active::after {
     width: 100%;
+    color: rgb(247, 243, 236);
 }
 
 #search-bar {
@@ -259,7 +264,6 @@ section {
     transition: .5s ease-in-out;
 }
 
-
 #page1 a {
     text-decoration: none;
     position: relative;
@@ -269,7 +273,7 @@ section {
     top: 25%;
 }
 
- #page1 .btn-1 {
+#page1 .btn-1 {
     border: 1px solid rgba(135, 131, 131, .2);
     background-color: #270101;
     padding: 1rem;
@@ -330,6 +334,55 @@ section {
     box-sizing: border-box;
 }
 
+#loadingSpinner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+
+#loadingSpinner.d-none {
+    display: none;
+}
+
+#loadingSpinner .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#loadingSpinner .load .spinner {
+    border: 0.5rem solid #f3f3f3;
+    border-top: 0.5rem solid #270101;
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+    animation: spin 1s linear infinite;
+}
+
+#loadingSpinner .spinner .visually-hidden {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 #page2 #page-form {
     position: relative;
     width: 100%;
@@ -347,10 +400,23 @@ section {
     box-sizing: border-box;
 }
 
-#page2 #page-form #error-message h3 {
-    color: white;
-    font-size: clamp(0.875rem, 1.5vw, 1rem);
-    font-weight: 200;
+#page2 #page-form #error-message.error {
+    background-color: #270101;
+    color: #ffebee; 
+    border: none; 
+}
+
+#page2 #page-form #error-message.success {
+    background-color: rgb(60, 131, 65);
+    color: #e8f5e9; 
+    border: none; 
+}
+
+#page2 #page-form #error-message #error-text {
+    font-family: sans-serif;
+    font-weight: lighter;
+    font-size: clamp(.1rem, 2vw + .1rem, 1rem);
+    text-align: center;
 }
 
 #page2 #page-form #input-fields {

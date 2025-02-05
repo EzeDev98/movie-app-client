@@ -7,210 +7,167 @@
   <title>Register</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Rajdhani:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/register.css">
 </head>
 
 <body>
-<header>
-  <nav id="links-nav">
-    <div id="logo">
-      <a href="../index.html"><img src="../images/bird-2.png" alt="Logo"></a>
-    </div>
-    <ul class="nav-links">
-      <li><a class="active" href="../index.html">Home</a></li>
-      <li><a href="./action.html">Action</a></li>
-      <li><a href="./series.html">Series</a></li>
-      <li><a href="./contact.html">Contact</a></li>
-    </ul>
-    <div id="search-bar">
-      <form action="./search.html" method="get">
-        <input type="text" name="title" placeholder="Search movies here ...">
-        <button class="btn" type="submit"><i class="fa fa-search thin"></i></button>
-      </form>
-    </div>
-    <div id="burger-menu">
-      <i class="fa fa-bars"></i>
-    </div>
-  </nav>
-  <div id="line"></div>
-  <nav id="address-nav" class="fade">
-    <div id="contact">
-      <h4><i class="fa fa-phone"></i>+2349022931212</h4>
-      <h4><i class="fa fa-envelope"></i>ezemosesjohn21997@gmail.com</h4>
-      <h4><i class="fas fa-map-marker-alt"></i>109 awolowo road ikoyi</h4>
-    </div>
-    <div id="auth">
-      <a href="./login.html"><i class="fa fa-sign-in"></i>Login</a>
-      <a href="./register.html"><i class="fa fa-user"></i>Register</a>
-    </div>
-  </nav>
-</header>
 
-<main>
-  <section id="page1">
-    <div id="page-1-container-position">
-      <div class="page-1-container-content">
-        <h4>Sign up now</h4>
-        <div class="subscribe-container">
-          <input type="text" name="email" placeholder="Enter your email here ...">
-          <button class="btn" type="submit">Send</button>
+  <main>
+    <section id="page1">
+      <div id="page-1-container-position">
+        <div class="page-1-container-content">
+          <h4>Sign up now</h4>
+          <div class="subscribe-container">
+            <input type="text" name="email" placeholder="Enter your email here ...">
+            <button class="btn" type="submit">Send</button>
+          </div>
         </div>
       </div>
-    </div>
-    <a href="#page2"><button class="btn-1"><i class="fas fa-arrow-down"></i></button></a>
-    <div class="animated-bg"></div>
-  </section>
+      <a href="#page2"><button class="btn-1"><i class="fas fa-arrow-down"></i></button></a>
+      <div class="animated-bg"></div>
+    </section>
 
-  <section id="page2">
-    <div id="page-2-container">
-      <form id="page-form" onsubmit="return false;">
-        <div id="error-message">
-          <h4 id="error-text"></h4>
-        </div>
-        <div id="input-fields">
-          <h1>Create an account</h1>
-          <div class="input-col">
-            <div class="input-box">
-              <input type="text" name="firstname" id="firstname" required>
-              <span class="input-box-text">First name</span>
-              <span class="input-box-lines"></span>
+    <section id="page2">
+
+      <div id="loadingSpinner" class="d-none">
+        <div class="overlay">
+          <div class="load">
+            <div class="spinner" style="width: 6rem; height: 6rem;" role="status">
+              <span class="visually-hidden">Loading...</span>
             </div>
-          </div>
-          <div class="input-col">
-            <div class="input-box">
-              <input type="text" name="lastname" id="lastname" required>
-              <span class="input-box-text">Last name</span>
-              <span class="input-box-lines"></span>
-            </div>
-          </div>
-          <div class="input-col">
-            <div class="input-box">
-              <input type="text" name="username" id="username" required>
-              <span class="input-box-text">Username</span>
-              <span class="input-box-lines"></span>
-            </div>
-          </div>
-          <div class="input-col">
-            <div class="input-box">
-              <input type="email" name="email" id="email" required>
-              <span class="input-box-text">Email</span>
-              <span class="input-box-lines"></span>
-            </div>
-          </div>
-          <div class="input-col">
-            <div class="input-box">
-              <input type="text" name="phoneNumber" id="phoneNumber" required>
-              <span class="input-box-text">Phone number</span>
-              <span class="input-box-lines"></span>
-            </div>
-          </div>
-          <div class="input-col">
-            <div class="input-box">
-              <input type="password" name="password" id="password" required>
-              <span class="input-box-text">Password</span>
-              <span class="input-box-lines"></span>
-            </div>
-          </div>
-          <div class="input-col">
-            <div class="input-box">
-              <input type="password" name="confirmPassword" id="confirmPassword" required>
-              <span class="input-box-text">Confirm password</span>
-              <span class="input-box-lines"></span>
-            </div>
-          </div>
-          <div class="input-box-btn">
-            <input type="submit" value="Signup">
-          </div>
-          <div id="input-box-line-demacotor">
-            <span class="line-0"></span>
-            <h2>or login with</h2>
-            <span class="line-0"></span>
-          </div>
-          <div id="input-box-auth-type">
-            <div id="facebook-auth" class="auth-button">
-              <a href="#" target="_blank"><i class="fab fa-facebook"></i>
-                <h6>Facebook</h6>
-              </a>
-            </div>
-            <div id="google-auth" class="auth-button">
-              <a href="#" target="_blank"><i class="fab fa-google"></i>
-                <h6>Google</h6>
-              </a>
-            </div>
-          </div>
-          <div id="input-box-auth-question">
-            <h3>Already have an account? <a href="./login.html">Login here</a></h3>
           </div>
         </div>
-      </form>
-    </div>
-  </section>
-</main>
+      </div>
 
-<footer>
-  <div id="footer-container">
-    <div id="footer-links">
-      <li><a href="#" target="_blank"><i class="fab fa-facebook"></i></a></li>
-      <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-      <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-      <li><a href="#" target="_blank"><i class="fab fa-youtube"></i></a></li>
-      <li><a href="#" target="_blank"><i class="fab fa-google"></i></a></li>
-    </div>
-    <div id="footer-links-1">
-      <li><a href="#">Get App</a></li>
-      <li><a href="#">Help</a></li>
-      <li><a href="#">Site Index</a></li>
-      <li><a href="#">MovieQuestPro</a></li>
-      <li><a href="#">Box Office EzeDev</a></li>
-      <li><a href="#">MovieQuest Developer</a></li>
-    </div>
-    <div id="footer-links-1">
-      <li><a href="#">Press Room</a></li>
-      <li><a href="#">Advertising</a></li>
-      <li><a href="#">Jobs</a></li>
-      <li><a href="#">Conditions of Use</a></li>
-      <li><a href="#">Privacy Policy</a></li>
-      <li><a href="#">Your Ads Privacy Choices</a></li>
-    </div>
-    <div id="patent">
-      <h4>eze's incorporation</h4>
-    </div>
-    <div id="copy-right">
-      <p>&#169;1990-2024 by ezedev.com, Inc.</p>
-    </div>
-  </div>
-</footer>
+      <div id="page-2-container">
+        <form id="page-form" onsubmit="return false;">
+          <div id="error-message">
+            <h4 id="error-text"></h4>
+          </div>
+          <div id="input-fields">
+            <h1>Create an account</h1>
+            <div class="input-col">
+              <div class="input-box">
+                <input type="text" name="firstname" id="firstname" required>
+                <span class="input-box-text">First name</span>
+                <span class="input-box-lines"></span>
+              </div>
+            </div>
+            <div class="input-col">
+              <div class="input-box">
+                <input type="text" name="lastname" id="lastname" required>
+                <span class="input-box-text">Last name</span>
+                <span class="input-box-lines"></span>
+              </div>
+            </div>
+            <div class="input-col">
+              <div class="input-box">
+                <input type="text" name="username" id="username" required>
+                <span class="input-box-text">Username</span>
+                <span class="input-box-lines"></span>
+              </div>
+            </div>
+            <div class="input-col">
+              <div class="input-box">
+                <input type="email" name="email" id="email" required>
+                <span class="input-box-text">Email</span>
+                <span class="input-box-lines"></span>
+              </div>
+            </div>
+            <div class="input-col">
+              <div class="input-box">
+                <input type="text" name="phoneNumber" id="phoneNumber" required>
+                <span class="input-box-text">Phone number</span>
+                <span class="input-box-lines"></span>
+              </div>
+            </div>
+            <div class="input-col">
+              <div class="input-box password-toggle">
+                <input type="password" name="password" id="password" required>
+                <span class="input-box-text">Password</span>
+                <span class="input-box-lines"></span>
+                <button type="button" id="togglePassword1" class="toggle-password">
+                  <i class="far fa-eye"></i>
+                </button>
+              </div>
+            </div>
+            <div class="input-col">
+              <div class="input-box password-toggle">
+                <input type="password" name="confirmPassword" id="confirmPassword" required>
+                <span class="input-box-text">Confirm password</span>
+                <span class="input-box-lines"></span>
+                <button type="button" id="togglePassword2" class="toggle-password">
+                  <i class="far fa-eye"></i>
+                </button>
+              </div>
+            </div>
+            <div class="input-box-btn">
+              <input type="submit" value="Signup">
+            </div>
+            <div id="input-box-line-demacotor">
+              <span class="line-0"></span>
+              <h2>or login with</h2>
+              <span class="line-0"></span>
+            </div>
+            <div id="input-box-auth-type">
+              <div id="facebook-auth" class="auth-button">
+                <a href="#" target="_blank"><i class="fab fa-facebook"></i>
+                  <h6>Facebook</h6>
+                </a>
+              </div>
+              <div id="google-auth" class="auth-button">
+                <a href="#" target="_blank"><i class="fab fa-google"></i>
+                  <h6>Google</h6>
+                </a>
+              </div>
+            </div>
+            <div id="input-box-auth-question">
+              <h3>Already have an account? <a href="/pages/login.html">Login here</a></h3>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
 
-<script>
-  window.addEventListener('scroll', function () {
-    var addressNav = document.getElementById('address-nav');
-    var linksNav = document.getElementById('links-nav');
-    var scrolled = window.scrollY > 0;
-    addressNav.classList.toggle('scrolled', scrolled);
-    linksNav.classList.toggle('scrolled', scrolled);
-  });
-
-  document.getElementById('burger-menu').addEventListener('click', function () {
-    var navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('active');
-  });
-
-  document.addEventListener('DOMContentLoaded', function() {
-    const currentPath = window.location.pathname;
-    const navLinks = document.querySelectorAll('.nav-links a');
-    navLinks.forEach(link => {
-      if (link.getAttribute('href') === currentPath) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
-      }
-    });
-  });
-
-</script>
-<script src="../dist/registerPage.bundle.js"></script>
+  <footer>
+    <div id="footer-container">
+      <div id="footer-links">
+        <li><a href="#" target="_blank"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="#" target="_blank"><i class="fab fa-youtube"></i></a></li>
+        <li><a href="#" target="_blank"><i class="fab fa-google"></i></a></li>
+      </div>
+      <div id="footer-links-1">
+        <li><a href="#">Get App</a></li>
+        <li><a href="#">Help</a></li>
+        <li><a href="#">Site Index</a></li>
+        <li><a href="#">MovieQuestPro</a></li>
+        <li><a href="#">Box Office EzeDev</a></li>
+        <li><a href="#">MovieQuest Developer</a></li>
+      </div>
+      <div id="footer-links-1">
+        <li><a href="#">Press Room</a></li>
+        <li><a href="#">Advertising</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#">Conditions of Use</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Your Ads Privacy Choices</a></li>
+      </div>
+      <div id="patent">
+        <h4>eze's incorporation</h4>
+      </div>
+      <div id="copy-right">
+        <p>&#169;1990-2024 by ezedev.com, Inc.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="/dist/registerPage.bundle.js"></script>
 </body>
+
 </html>

@@ -1,12 +1,15 @@
+import { showLoadingSpinner, hideLoadingSpinner, displayErrorMessages, resetErrorMessages, setupBurgerMenu } from './utils.js';
+
 const form = document.getElementById("page-form");
 const errorMessage = document.getElementById("error-message");
 const errorText = document.getElementById("error-text");
+const submitButton = document.querySelector('button[type="submit"]');
 
 form.addEventListener('submit', function(event) {
+
     event.preventDefault();
 
-    errorMessage.style.display = 'none';
-    errorText.innerHTML = '';
+    resetErrorMessages();
 
     const firstName = document.getElementById("firstname").value.trim();
     const lastName = document.getElementById("lastname").value.trim();
@@ -16,21 +19,27 @@ form.addEventListener('submit', function(event) {
     const password = document.getElementById("password").value;
     const confirmPassword = document.getElementById("confirmPassword").value;   
 
-    // Password match check
+    submitButton.disabled = true;
+    showLoadingSpinner(); 
+
     if (password !== confirmPassword) {
         displayErrorMessages("Passwords do not match");
+        submitButton.disabled = false;
+        hideLoadingSpinner();
         return;
     }
 
-    // Phone number validation
-    if (phoneNumber.length !== 11 || !/^\d+$/.test(phoneNumber)) {
+    if (!isValidPhoneNumber(phoneNumber)) {
         displayErrorMessages("Invalid phone number. Phone number should be exactly 11 digits.");
+        submitButton.disabled = false;
+        hideLoadingSpinner(); 
         return;
     }
 
-    // Password validation
     if (!isValidPassword(password)) {
         displayErrorMessages("Password must contain at least 8 characters, including uppercase, lowercase, special characters and a number.");
+        submitButton.disabled = false;
+        hideLoadingSpinner();
         return;
     }
 
@@ -52,31 +61,48 @@ form.addEventListener('submit', function(event) {
         body: JSON.stringify(formData)
     })
     .then(async response => {
-        if (response.ok) {
-            await response.json();
-            window.location.href = '/pages/activate.html';
+
+        console.log("Raw Response from server: ", response);
+
+        const data = await response.json();
+
+        console.log("Raw response text:", data);
+
+        if (!response.ok) {
+            
+            displayErrorMessages(data.message || "Registration failed, please try again");
+            submitButton.disabled=false;
+            return
         } else {
-            const data = await response.json();
-            displayErrorMessages(data.message || 'An error occurred. User not registered');
+            window.location.href = '/pages/activate.html';
         }
     })
     .catch(error => {
-        console.error("Error:", error);
-        displayErrorMessages("An unexpected error occurred");
+        console.error("Error: ", error);
+        displayErrorMessages(error.message || "An unknown error occurred.");
+        submitButton.disabled = false;
+    })
+    .finally(() => {
+        hideLoadingSpinner(); 
     });
 });
 
-function isValidPassword(password) {
-    const minLength = 8;
-    const hasUpperCase = /[A-Z]/.test(password);
-    const hasLowerCase = /[a-z]/.test(password);
-    const hasNumber = /\d/.test(password);
-    const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.toggle-password').forEach(button => {
+        button.addEventListener('click', function () {
 
-    return password.length >= minLength && hasUpperCase && hasLowerCase && hasSpecialChar && hasNumber; 
-}
+            const inputContainer = button.closest('.input-box');
+            const passwordInput = inputContainer.querySelector('input');
+            const icon = button.querySelector('i');
 
-function displayErrorMessages(messages) {
-    errorText.innerHTML = messages;
-    errorMessage.style.display = 'block';
-}
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                icon.classList.replace('fa-eye', 'fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                icon.classList.replace('fa-eye-slash', 'fa-eye');
+            }
+
+        });
+    });
+});
